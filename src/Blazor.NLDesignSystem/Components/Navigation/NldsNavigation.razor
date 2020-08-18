@@ -1,8 +1,17 @@
 ﻿@namespace Blazor.NLDesignSystem.Components
-<nav class="top-nav top-nav--@DisplayColor">
-    <div class="container">
-        <CascadingValue IsFixed="true" Name="AutoResize" Value="AutoResize">
+<nav class="@(IsSideNavigation ? "sidenav" : $"top-nav{(UseColor ? $" top-nav--{DisplayColor}" : string.Empty)}")">
+    @if (IsSideNavigation)
+    {
+        <CascadingValue Name="IsInSideNavigation" Value="@IsSideNavigation">
             @ChildContent
         </CascadingValue>
+    }
+    else
+    {
+    <div class="container">
+        <div @ref="NavigationResizeReference" class="@(AutoResize ? "top-nav-autoresize" : string.Empty)">
+            @ChildContent
+        </div>
     </div>
+    }
 </nav>

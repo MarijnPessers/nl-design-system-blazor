@@ -16,6 +16,8 @@ namespace Blazor.NLDesignSystem.Components
         [Parameter]
         public string CollapsedText { get; set; } = "ingeklapt";
         [Parameter]
+        public string Identifier { get; set; }
+        [Parameter]
         public string Target { get; set; }
         [Parameter]
         public string UnfoldedText { get; set; } = "uitgeklapt";
@@ -25,7 +27,12 @@ namespace Blazor.NLDesignSystem.Components
         [Parameter]
         public RenderFragment Title { get; set; }
 
-        private ElementReference CollapsableReference { get; set; }
+        [Parameter]
+        public EventCallback OnCollapseClose { get; set; }
+        [Parameter]
+        public EventCallback OnCollapseOpen { get; set; }
+
+        private ElementReference CollapseReference { get; set; }
 
         private bool ShowContent => Content != null;
 
@@ -33,7 +40,7 @@ namespace Blazor.NLDesignSystem.Components
         {
             if (firstRender)
             {
-                await JSRuntime.InvokeVoidAsync("collapse", CollapsableReference);
+                await JSRuntime.InvokeVoidAsync("collapse", CollapseReference, Identifier);
             }
             await base.OnAfterRenderAsync(firstRender);
         }
@@ -67,6 +74,48 @@ namespace Blazor.NLDesignSystem.Components
             }
 
             return attributes;
+        }
+
+        public async void Close()
+        {
+            await JSRuntime.InvokeVoidAsync("closeCollapse", Identifier);
+        }
+
+        public async void Destroy()
+        {
+            await JSRuntime.InvokeVoidAsync("destroyCollapse", Identifier);
+        }
+
+        public async void Open()
+        {
+            await JSRuntime.InvokeVoidAsync("openCollapse", Identifier);
+        }
+
+        public async void Toggle()
+        {
+            await JSRuntime.InvokeVoidAsync("toggleCollapse", Identifier);
+        }
+
+        protected override async Task SetEventListeners()
+        {
+            await SetEventListener("collapse-close", CollapseReference);
+            await SetEventListener("collapse-open", CollapseReference);
+        }
+
+        [JSInvokable]
+        public override async Task EventCallback(string eventName, string eventJson)
+        {
+            switch (eventName)
+            {
+                case "collapse-close":
+                    if (OnCollapseClose.HasDelegate)
+                        await OnCollapseClose.InvokeAsync(this);
+                    break;
+                case "collapse-open":
+                    if (OnCollapseOpen.HasDelegate)
+                        await OnCollapseOpen.InvokeAsync(this);
+                    break;
+            }
         }
     }
 }

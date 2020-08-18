@@ -11,9 +11,11 @@ namespace Blazor.NLDesignSystem.Components
         [Parameter]
         public string Identifier { get; set; }
         [Parameter]
+        public bool IsFilter { get; set; }
+        [Parameter]
         public ItemAlignment ItemAlignment { get; set; }
         [Parameter]
-        public IEnumerable<RadioItem> Items { get; set; }
+        public IEnumerable<RadioItem> Items { get; set; } = new List<RadioItem>();
 
         [Parameter]
         public RenderFragment Legend { get; set; }

@@ -1,6 +1,6 @@
 ﻿
 body.theme--xxl-breakpoint div.input--horizontal.input--invalid {
-    /* For an invalid form element diusplayed horizontally with the body set to show the horizontal labels */
+    /* For an invalid form element displayed horizontally with the body set to show the horizontal labels */
     padding-left: 0px;
 }
 
@@ -12,6 +12,25 @@ body.theme--xxl-breakpoint div.input--horizontal.input--invalid {
     white-space: nowrap;
 }
 
-.input--invalid .combobox__icon {
-    left: 3.4rem;
+/* Checkbox */
+
+/* the order of the css in the build css is different and that is why input__control is not overridden by input__control--checkbox*/
+.input__control.input__control--checkbox {
+    width: 1px;
+}
+
+/* Footer */
+
+/* the order of the css in the build css is different and that is why .list--links a:visited is not overridden by .footer__nav a:visited*/
+.footer__nav.list--links a:visited {
+    color: currentColor;
+}
+/* the order of the css in the build css is different and that is why .list--links a is not overridden by .footer__nav a*/
+.footer__nav.list--links a {
+    text-decoration: none
+}
+
+/* the order of the css in the build css is different and that is why a is not overridden by .top-nav*/
+.top-nav a, .top-nav a:visited, .top-nav a:hover, .top-nav a:active {
+    color: #fff;
 }

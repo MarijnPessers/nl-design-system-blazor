@@ -1,0 +1,19 @@
+﻿@namespace Blazor.NLDesignSystem.Components
+@if (DisplayAsHeader)
+{
+    <th @attributes="GetAttributes()">
+        @ChildContent
+    </th>
+}
+else
+{
+    <td @ref="CollapsableReference" @attributes="GetAttributes()">
+        @if (IsCollapsable)
+        {
+            <i class="collapse__indicator">
+                <span class="screenreader-only" data-contracted-i18n="@CollapsedText" data-expanded-i18n="@UnfoldedText"></span>
+            </i>
+        }
+        @ChildContent
+    </td>
+}

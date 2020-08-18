@@ -1,2 +1,2051 @@
 ﻿@page "/componenten"
-<h3>Componenten</h3>
+<h2>Header example</h2>
+<NldsHeader Link="#" LinkTitle="A road to nowhere" LogoClass="header-logo--ocw" LinkScreenReaderDescription="This is a test header to nowhere" IsTransparent="true" />
+<h2>Labels</h2>
+<NldsLabel Color="Color.Wit">WIT</NldsLabel>
+<NldsLabel Color="Color.Zwart">ZWART</NldsLabel>
+<NldsLabel Color="Color.Violet">VIOLET</NldsLabel>
+<NldsLabel Color="Color.Roze">ROZE</NldsLabel>
+<NldsLabel Color="Color.Rood">ROOD</NldsLabel>
+<NldsLabel Color="Color.RobijnRood">ROBIJNROOD</NldsLabel>
+<NldsLabel Color="Color.Paars">PAARS</NldsLabel>
+<NldsLabel Color="Color.Oranje">ORANJE</NldsLabel>
+<NldsLabel Color="Color.Mosgroen">MOSGROEN</NldsLabel>
+<NldsLabel Color="Color.Mintgroen">MINTGROEN</NldsLabel>
+<NldsLabel Color="Color.Lichtblauw">LICHTBLAUW</NldsLabel>
+<NldsLabel Color="Color.HemelBlauw">HEMELBLAUW</NldsLabel>
+<NldsLabel Color="Color.DonkerBlauw">DONKERBLAUW</NldsLabel>
+<NldsLabel Color="Color.Groen">GROEN</NldsLabel>
+<NldsLabel Color="Color.Geel">GEEL</NldsLabel>
+<NldsLabel Color="Color.Donkergroen">DONKERGROEN</NldsLabel>
+<NldsLabel Color="Color.Donkergeel">DONKERGEEL</NldsLabel>
+<NldsLabel Color="Color.Bruin">BRUIN</NldsLabel>
+<NldsLabel Color="Color.Optioneel">OPTIONEEL</NldsLabel>
+<h2>Badges</h2>
+<NldsBadge Color="Color.Wit" Number="1" />
+<NldsBadge Color="Color.Zwart" Number="2" />
+<NldsBadge Color="Color.Violet" Number="3" />
+<NldsBadge Color="Color.Roze" Number="4" />
+<NldsBadge Color="Color.Rood" Number="5" />
+<NldsBadge Color="Color.RobijnRood" Number="6" />
+<NldsBadge Color="Color.Paars" Number="7" />
+<NldsBadge Color="Color.Oranje" Number="8" />
+<NldsBadge Color="Color.Mosgroen" Number="9" />
+<NldsBadge Color="Color.Mintgroen" Number="10" />
+<NldsBadge Color="Color.Lichtblauw" Number="11" />
+<NldsBadge Color="Color.HemelBlauw" Number="12" />
+<NldsBadge Color="Color.DonkerBlauw" Number="13" />
+<NldsBadge Color="Color.Groen" Number="14" />
+<NldsBadge Color="Color.Geel" Number="15" />
+<NldsBadge Color="Color.Donkergroen" Number="16" />
+<NldsBadge Color="Color.Donkergeel" Number="17" />
+<NldsBadge Color="Color.Bruin" Number="18" />
+<NldsBadge Color="Color.Optioneel" Number="19" />
+<h3>Badge On icon</h3>
+<i class="icon icon-user"></i>
+<NldsBadge UseOnIcon="true" Color="Color.Rood" Number="28"></NldsBadge>
+
+<h2>Buttons</h2>
+<NldsButton>Standard button</NldsButton>
+<NldsButton Type="ButtonType.Disabled">Hello World!</NldsButton>
+<NldsButton Type="ButtonType.Icon" Title="Zoeken"><NldsIcon Icon="Icon.Magnifier" /></NldsButton>
+<NldsButton Type="ButtonType.Primary"><NldsButtonIcon Icon="Icon.Magnifier" Title="Zoek">Zoek</NldsButtonIcon></NldsButton>
+<NldsButton Type="ButtonType.Primary"><NldsButtonIcon Icon="Icon.ArrowForward" Position="RelativePosition.After">Verder</NldsButtonIcon></NldsButton>
+<NldsButton Type="ButtonType.DigiD">Hello World!</NldsButton>
+<NldsButton Type="ButtonType.DigiDPrimary">
+    Inloggen Mijn DUO
+    <span class="screenreader-only">&nbsp;met Digi D</span>
+</NldsButton>
+<NldsButton><NldsButtonSpinner>Aan het opslaan</NldsButtonSpinner></NldsButton>
+<NldsButton Type="ButtonType.Link">Knop als link</NldsButton>
+<h3>Met onclick event</h3>
+@code {
+    int waarde = 0;
+    private void Add()
+    {
+        waarde += 1;
+    }
+}
+<NldsButton Type="ButtonType.Disabled" OnClick="Add">Waarde Ophogen</NldsButton>
+<NldsButton OnClick="Add">Waarde Ophogen</NldsButton>
+<p>Waarde: @waarde</p>
+<h2>Collapse</h2>
+<h3>Normal</h3>
+<NldsCollapseWrapper>
+    <NldsCollapse>
+        <Title>Titel <u>van</u> collapse</Title>
+        <Content>
+            <NldsCollapseContent>
+                Dit <i>is</i> de <strong>inhoud</strong> van <u>de</u> collapse. Humani generiss sunt dominas de nobilis compater. Cliniass cadunt in audax cirpi! Est placidus urbs, cesaris.
+            </NldsCollapseContent>
+        </Content>
+    </NldsCollapse>
+</NldsCollapseWrapper>
+<h3>Extra Indent</h3>
+<NldsCollapseWrapper>
+    <NldsCollapse>
+        <Title>Titel van collapse</Title>
+        <Content>
+            <NldsCollapseContent IsIndented="true">
+                Dit is de inhoud van de collapse. Humani generiss sunt dominas de nobilis compater. Cliniass cadunt in audax cirpi! Est placidus urbs, cesaris.
+            </NldsCollapseContent>
+        </Content>
+    </NldsCollapse>
+</NldsCollapseWrapper>
+<h3>No Background</h3>
+<NldsCollapseWrapper HasBackground="false">
+    <NldsCollapse>
+        <Title>Titel van collapse</Title>
+        <Content>
+            <NldsCollapseContent>
+                Dit is de inhoud van de collapse. Humani generiss sunt dominas de nobilis compater. Cliniass cadunt in audax cirpi! Est placidus urbs, cesaris.
+            </NldsCollapseContent>
+        </Content>
+    </NldsCollapse>
+</NldsCollapseWrapper>
+<h3>Simple</h3>
+<NldsCollapseWrapper IsSimple="true">
+    <NldsCollapse>
+        <Title>Titel van collapse</Title>
+        <Content>
+            <NldsCollapseContent>
+                Dit is de inhoud van de collapse. Humani generiss sunt dominas de nobilis compater. Cliniass cadunt in audax cirpi! Est placidus urbs, cesaris.
+            </NldsCollapseContent>
+        </Content>
+    </NldsCollapse>
+</NldsCollapseWrapper>
+<h3>Icons</h3>
+<NldsCollapseWrapper UseIcons="true">
+    <NldsCollapse>
+        <Title>Titel van collapse</Title>
+        <Content>
+            <NldsCollapseContent>
+                Dit is de inhoud van de collapse. Humani generiss sunt dominas de nobilis compater. Cliniass cadunt in audax cirpi! Est placidus urbs, cesaris.
+            </NldsCollapseContent>
+        </Content>
+    </NldsCollapse>
+</NldsCollapseWrapper>
+<h3>Grouped</h3>
+<NldsCollapseWrapper GroupName="TestGroup">
+    <NldsCollapse>
+        <Title>Titel <u>van</u> collapse</Title>
+        <Content>
+            <NldsCollapseContent>
+                Dit <i>is</i> de <strong>inhoud</strong> van <u>de</u> collapse. Humani generiss sunt dominas de nobilis compater. Cliniass cadunt in audax cirpi! Est placidus urbs, cesaris.
+            </NldsCollapseContent>
+        </Content>
+    </NldsCollapse>
+    <NldsCollapse>
+        <Title>Titel <u>van</u> collapse</Title>
+        <Content>
+            <NldsCollapseContent>
+                Dit <i>is</i> de <strong>inhoud</strong> van <u>de</u> collapse. Humani generiss sunt dominas de nobilis compater. Cliniass cadunt in audax cirpi! Est placidus urbs, cesaris.
+            </NldsCollapseContent>
+        </Content>
+    </NldsCollapse>
+</NldsCollapseWrapper>
+<h3>Other Target</h3>
+<NldsCollapseWrapper>
+    <NldsCollapse Target="Collapse_target">
+        <Title>Titel <u>van</u> collapse</Title>
+    </NldsCollapse>
+</NldsCollapseWrapper>
+<h4>Collapse Target</h4>
+<NldsCollapseContent Id="Collapse_target">
+    Dolor set amit
+</NldsCollapseContent>
+<h3>Collapse Tabel</h3>
+<NldsTable IsStriped="true">
+    <Header>
+        <NldsTableRow>
+            <NldsTableCell>Opleidingsstelsel</NldsTableCell>
+            <NldsTableCell>Opleidingscode</NldsTableCell>
+            <NldsTableCell>Type</NldsTableCell>
+        </NldsTableRow>
+    </Header>
+    <Body>
+        <NldsTableRow>
+            <NldsTableCell CollapseTarget="table_collapse">Centraal register</NldsTableCell>
+            <NldsTableCell>-</NldsTableCell>
+            <NldsTableCell>MBO-Onderwijslicentie</NldsTableCell>
+        </NldsTableRow>
+        <NldsTableRow IsCollapsableContent="true" Identifier="table_collapse" BackgroundColor="Color.Mintgroen">
+            <NldsTableCell Colspan="3">
+                <p>
+                    Proin quis massa
+                    a quam consequat cursus fringilla vel purus. Nunc at felis
+                    feugiat, aliquet massa eu, porta mauris. Sed ac turpis at
+                    dolor consequat venenatis. Aenean sed blandit leo.
+                    Suspendisse dignissim arcu tortor, in faucibus arcu
+                    fringilla vitae. Maecenas at velit quis elit tincidunt
+                    pellentesque in id erat. Vestibulum ante ipsum primis in
+                    faucibus orci luctus et ultrices posuere cubilia Curae;
+                    Vestibulum bibendum ut erat non vehicula. Quisque at lacus
+                    nec sem pulvinar interdum.
+                </p>
+            </NldsTableCell>
+        </NldsTableRow>
+        <NldsTableRow>
+            <NldsTableCell CollapseTarget="table_collapse2">Beroepsonderwijs</NldsTableCell>
+            <NldsTableCell>-</NldsTableCell>
+            <NldsTableCell>Examenlicentie</NldsTableCell>
+        </NldsTableRow>
+        <NldsTableRow IsCollapsableContent="true" Identifier="table_collapse2" BackgroundColor="Color.Mintgroen">
+            <NldsTableCell Colspan="3">
+                <p>
+                    Proin quis massa
+                    a quam consequat cursus fringilla vel purus. Nunc at felis
+                    feugiat, aliquet massa eu, porta mauris. Sed ac turpis at
+                    dolor consequat venenatis. Aenean sed blandit leo.
+                    Suspendisse dignissim arcu tortor, in faucibus arcu
+                    fringilla vitae. Maecenas at velit quis elit tincidunt
+                    pellentesque in id erat. Vestibulum ante ipsum primis in
+                    faucibus orci luctus et ultrices posuere cubilia Curae;
+                    Vestibulum bibendum ut erat non vehicula. Quisque at lacus
+                    nec sem pulvinar interdum.
+                </p>
+            </NldsTableCell>
+        </NldsTableRow>
+    </Body>
+</NldsTable>
+<h3>Controlled externally</h3>
+@code {
+    private NldsCollapse CollapseExternal1 { get; set; }
+    private void CollapseClose()
+    {
+        CollapseExternal1.Close();
+    }
+    private void CollapseOpen()
+    {
+        CollapseExternal1.Open();
+    }
+    private void CollapseToggle()
+    {
+        CollapseExternal1.Toggle();
+    }
+    private void CollapseDestroy()
+    {
+        CollapseExternal1.Destroy();
+    }
+    private string LastAction = string.Empty;
+    private void OnCollapse1Close()
+    {
+        LastAction = "Close";
+    }
+    private void OnCollapse1Open()
+    {
+        LastAction = "Open";
+    }
+}
+<NldsCollapseWrapper>
+    <NldsCollapse @ref="CollapseExternal1" Identifier="externalCollapse" OnCollapseClose="OnCollapse1Close" OnCollapseOpen="OnCollapse1Open">
+        <Title>Titel <u>van</u> collapse</Title>
+        <Content>
+            <NldsCollapseContent>
+                Dit <i>is</i> de <strong>inhoud</strong> van <u>de</u> collapse. Humani generiss sunt dominas de nobilis compater. Cliniass cadunt in audax cirpi! Est placidus urbs, cesaris.
+            </NldsCollapseContent>
+        </Content>
+    </NldsCollapse>
+</NldsCollapseWrapper>
+<button @onclick="CollapseOpen">Open</button>
+<button @onclick="CollapseClose">Close</button>
+<button @onclick="CollapseToggle">Toggle</button>
+<button @onclick="CollapseDestroy">Destroy</button>
+<h4>Event callbacks</h4>
+<p>Last Action: @LastAction</p>
+<h2>Input</h2>
+<h3>6 Input Types</h3>
+<NldsForm>
+    <NldsInput Identifier="z1" Size="InputSize.Medium" Type="InputType.Email">
+        <Label><NldsFormLabel>Email</NldsFormLabel></Label>
+    </NldsInput>
+    <NldsInput Identifier="z2" Size="InputSize.Medium" Type="InputType.Number">
+        <Label><NldsFormLabel>Number</NldsFormLabel></Label>
+    </NldsInput>
+    <NldsInput Identifier="z3" Size="InputSize.Medium" Type="InputType.Password">
+        <Label><NldsFormLabel>Password</NldsFormLabel></Label>
+    </NldsInput>
+    <NldsInput Identifier="z4" Size="InputSize.Medium" Type="InputType.Text">
+        <Label><NldsFormLabel>Text</NldsFormLabel></Label>
+    </NldsInput>
+    <NldsInput Identifier="z5" Size="InputSize.Medium" Type="InputType.Url">
+        <Label><NldsFormLabel>Url</NldsFormLabel></Label>
+    </NldsInput>
+    <NldsInput Identifier="z6" Size="InputSize.Medium" Type="InputType.Search">
+        <Label><NldsFormLabel>Search</NldsFormLabel></Label>
+    </NldsInput>
+</NldsForm>
+<h3>Values</h3>
+@code {
+    private string inputValue = "This is content of the input";
+}
+<NldsForm>
+    <NldsInput Identifier="a0" Size="InputSize.Large" @bind-Value="@inputValue">
+        <Label><NldsFormLabel>Two-way binding</NldsFormLabel></Label>
+    </NldsInput>
+</NldsForm>
+<h4>@inputValue</h4>
+<h3>Errors</h3>
+<NldsForm>
+    <NldsInput Identifier="a1" Size="InputSize.Medium" ErrorText="U heeft het veld <u>Naam beheerder</u> nog niet ingevuld">
+        <Label><NldsFormLabel>Naam Beheerder</NldsFormLabel></Label>
+        <Hint><NldsFormHint HintName="fullname">Bijvoorbeeld Frank Masmeijer</NldsFormHint></Hint>
+    </NldsInput>
+</NldsForm>
+<h3>Area describedby</h3>
+<NldsForm>
+    <NldsInput Identifier="a2" Size="InputSize.Medium" AriaDescribedBy="fullname">
+        <Label><NldsFormLabel>Area descirbed by manually set</NldsFormLabel></Label>
+        <Hint><NldsFormHint HintName="fullname">Bijvoorbeeld Frank Govers</NldsFormHint></Hint>
+    </NldsInput>
+</NldsForm>
+<h3>Restriction</h3>
+<NldsForm>
+    <NldsInput Identifier="a3" Size="InputSize.Medium" IsDisabled="true">
+        <Label><NldsFormLabel>Disabled</NldsFormLabel></Label>
+    </NldsInput>
+    <NldsInput Identifier="a4" Size="InputSize.Medium" IsRequired="true">
+        <Label><NldsFormLabel><strong>Required</strong></NldsFormLabel></Label>
+    </NldsInput>
+</NldsForm>
+<h3>Sizes</h3>
+<NldsForm>
+    <NldsInput Identifier="b" Size="InputSize.ExtraSmall"><Label><NldsFormLabel>Extra Small</NldsFormLabel></Label></NldsInput>
+    <NldsInput Identifier="c" Size="InputSize.Small"><Label><NldsFormLabel>Small</NldsFormLabel></Label></NldsInput>
+    <NldsInput Identifier="d" Size="InputSize.Medium"><Label><NldsFormLabel>Medium</NldsFormLabel></Label></NldsInput>
+    <NldsInput Identifier="e" Size="InputSize.Large"><Label><NldsFormLabel>Large</NldsFormLabel></Label></NldsInput>
+    <NldsInput Identifier="f" Size="InputSize.ExtraLarge"><Label><NldsFormLabel>Extra Large</NldsFormLabel></Label></NldsInput>
+</NldsForm>
+<h3>Horizontal</h3>
+<p>For this to work horizontally set Body to class: theme--xxl-breakpoint</p>
+<NldsForm>
+    <NldsInput Identifier="g" LabelAlignment="LabelAlignment.Horizontal" Size="InputSize.Medium"><Label><NldsFormLabel>Horizontal Label</NldsFormLabel></Label></NldsInput>
+</NldsForm>
+<NldsForm>
+    <NldsInput Identifier="aa1" LabelAlignment="LabelAlignment.Horizontal" Size="InputSize.Medium" ErrorText="U heeft het veld <u>Naam beheerder</u> nog niet ingevuld">
+        <Label><NldsFormLabel>Naam Beheerder</NldsFormLabel></Label>
+        <Hint><NldsFormHint HintName="fullname">Bijvoorbeeld Frank Zappa</NldsFormHint></Hint>
+    </NldsInput>
+</NldsForm>
+<h3>TextArea</h3>
+@code {
+    string textArea = "test";
+}
+<NldsTextArea @bind-Value="@textArea" />
+<p>@textArea</p>
+<h2>Radios</h2>
+@code {
+    string radio1Value = "aanvrager_met_toeslagpartner";
+    List<RadioItem> items1 = new List<RadioItem>() {
+        new RadioItem() { Description = "<i>Alleenstaande</i>", Value = "alleenstaande" },
+        new RadioItem() { Description = "<i>Aanvrager <strong>met</strong> toeslagparter</i>", Value = "aanvrager_met_toeslagpartner" },
+        new RadioItem() { Description = "<u>Disabled</u>", Value = "disabled", IsDisabled = true }
+    };
+
+    string radio2Value = "bestaat niet";
+    List<RadioItem> items2 = new List<RadioItem>() {
+        new RadioItem() { Description = "Ja", Value = "Ja" },
+        new RadioItem() { Description = "Nee", Value = "Nee" },
+        new RadioItem() { Description = "Misschien", Value = "Misschien", IsDisabled = true }
+    };
+
+    string radio3Value = "bestaat niet";
+    List<RadioItem> items3 = new List<RadioItem>() {
+        new RadioItem() { Description = "Ja", Value = "Ja" },
+        new RadioItem() { Description = "Nee", Value = "Nee" },
+        new RadioItem() { Description = "Misschien", Value = "Misschien", IsDisabled = true }
+    };
+}
+<NldsForm>
+    <NldsRadio Items="@items1" @bind-Value="radio1Value" Identifier="groupName" ErrorText="Er is een error ofzo...">
+        <Legend><NldsLegend>Multiple functionalities shown</NldsLegend></Legend>
+        <Hint><NldsFormHint HintName="situatie">Geef aan of u alleenstaande bent of dat u een toeslagpartner heeft.</NldsFormHint></Hint>
+    </NldsRadio>
+    <h4>Geselecteerde waarde: @items1.FirstOrDefault(i => i.Value == radio1Value)?.Value</h4>
+    <h3>Horizontal</h3>
+    <NldsRadio Items="@items2" @bind-Value="radio2Value" Identifier="horizontal" ItemAlignment="ItemAlignment.Horizontal">
+        <Legend><NldsLegend>Item Alignment Horizontal</NldsLegend></Legend>
+    </NldsRadio>
+    <h3>Filter</h3>
+    <NldsRadio Items="@items3" @bind-Value="radio3Value" Identifier="filter" IsFilter="true">
+        <Legend><NldsLegend>Item Alignment Horizontal</NldsLegend></Legend>
+    </NldsRadio>
+</NldsForm>
+<h2>Select</h2>
+@code {
+    string selectValue1 = "aanvrager_met_toeslagpartner";
+    List<SelectItem> select1 = new List<SelectItem>() {
+            new SelectItem() { Description = "<i>Alleenstaande</i>", Value = "alleenstaande" },
+            new SelectItem() { Description = "<i>Aanvrager <strong>met</strong> toeslagparter</i>", Value = "aanvrager_met_toeslagpartner" },
+            new SelectItem() { Description = "<u>Disabled</u>", Value = "disabled", IsDisabled = true }
+        };
+
+    string selectValue2;
+    List<SelectItem> select2 = new List<SelectItem>() {
+            new SelectItem() { Description = "<i>Alleenstaande</i>", Value = "alleenstaande" },
+            new SelectItem() { Description = "<i>Aanvrager <strong>met</strong> toeslagparter</i>", Value = "aanvrager_met_toeslagpartner" },
+            new SelectItem() { Description = "<u>Disabled</u>", Value = "disabled", IsDisabled = true }
+        };
+}
+<h3>2-way binding</h3>
+<p>Markup is filteed in displaying the value in the dropdown. It can still be used for displaying outside of the select</p>
+<NldsForm>
+    <NldsSelect Identifier="b1" Size="InputSize.Medium" Items="@select1" @bind-Value="@selectValue1" ShowEmptyValue="false">
+        <Label><NldsFormLabel>Naam Beheerder</NldsFormLabel></Label>
+        <Hint><NldsFormHint HintName="fullname">Bijvoorbeeld Frank Groothof</NldsFormHint></Hint>
+    </NldsSelect>
+    <p>Selected value: @selectValue1</p>
+    <p>Selected displayvalue: @((MarkupString)select1.FirstOrDefault(s => s.Value == selectValue1).Description)</p>
+</NldsForm>
+<h3>Select with error</h3>
+<p>For this to work horizontally set Body to class: theme--xxl-breakpoint</p>
+<NldsForm>
+    <NldsSelect Identifier="b2" Size="InputSize.Medium" Items="@select2" @bind-Value="@selectValue2" LabelAlignment="LabelAlignment.Horizontal" EmptyValueDescription="--Selecteer iets--" ErrorText="Oops something went wrong.">
+        <Label><NldsFormLabel>Naam Beheerder</NldsFormLabel></Label>
+        <Hint><NldsFormHint HintName="fullname">Bijvoorbeeld Frank Sinatra</NldsFormHint></Hint>
+    </NldsSelect>
+</NldsForm>
+
+<h2>Date</h2>
+@code{
+    DateTime GeboorteDatum = new DateTime(1979, 3, 8);
+}
+<NldsForm>
+    <NldsDate Identifier="date"
+              @bind-Value="GeboorteDatum"
+              DescriptionYear="Geboortejaar" DescriptionMonth="Geboortemaand" DescriptionDay="Geboortedag"
+              LabelYear="JJJJ" LabelMonth="MM" LabelDay="DD">
+        <Label><NldsFormLabel>Geboortedatum</NldsFormLabel></Label>
+        <Hint><NldsFormHint>Wat is uw geboortedatum?</NldsFormHint></Hint>
+    </NldsDate>
+</NldsForm>
+@GeboorteDatum.ToString()
+
+<h2>Address</h2>
+@code{
+    Address Address = new Address
+    {
+        ZipCode = "1000NC",
+        HouseNumber = 1701,
+        HouseNumberSuffix = "D"
+    };
+}
+<NldsForm>
+    <NldsAddress Identifier="address"
+              @bind-Value="Address"
+              DescriptionZipcode="ZipCode" DescriptionHouseNumber="Nr" DescriptionHousenumberSuffix="ExtraInitcator"
+              LabelZipcode="Zip" LabelHouseNumber="Nr" LabelHousenumberSuffix="?">
+        <Label><NldsFormLabel>Adres</NldsFormLabel></Label>
+        <Hint><NldsFormHint>Waar woont u?</NldsFormHint></Hint>
+    </NldsAddress>
+</NldsForm>
+<p>Postcode: @Address.ZipCode</p>
+<p>Huisnummer: @Address.HouseNumber</p>
+<p>Toevoeging: @Address.HouseNumberSuffix</p>
+
+<h2>Checkbox</h2>
+@code {
+    IEnumerable<CheckboxItem> CheckBox1 = new List<CheckboxItem>() {
+            new CheckboxItem() { Description = "<i>Alleenstaande</i>", Value = "alleenstaande", IsChecked= true },
+            new CheckboxItem() { Description = "<i>Aanvrager <strong>met</strong> toeslagparter</i>", Value = "aanvrager_met_toeslagpartner" },
+            new CheckboxItem() { Description = "<u>Disabled</u>", Value = "disabled", IsDisabled = true }
+        };
+
+    IEnumerable<CheckboxItem> CheckBox2 = new List<CheckboxItem>() {
+            new CheckboxItem() { Description = "<i>Alleenstaande</i>", Value = "alleenstaande", IsChecked = true },
+            new CheckboxItem() { Description = "<i>Aanvrager <strong>met</strong> toeslagparter</i>", Value = "aanvrager_met_toeslagpartner" },
+            new CheckboxItem() { Description = "<u>Disabled</u>", Value = "disabled", IsDisabled = true }
+        };
+
+    IEnumerable<CheckboxItem> CheckBox3 = new List<CheckboxItem>() {
+            new CheckboxItem() { Description = "<i>Alleenstaande</i>", Value = "alleenstaande", IsChecked = true },
+            new CheckboxItem() { Description = "<i>Aanvrager <strong>met</strong> toeslagparter</i>", Value = "aanvrager_met_toeslagpartner" },
+            new CheckboxItem() { Description = "<u>Disabled</u>", Value = "disabled", IsDisabled = true }
+        };
+
+    IEnumerable<CheckboxItem> CheckBox4 = new List<CheckboxItem>() {
+            new CheckboxItem() { Description = "<i>Alleenstaande</i>", Value = "alleenstaande", IsChecked = false,
+                SubItems = new List<CheckboxItem> {
+                    new CheckboxItem() { Description = "Optie1", Value = "option1", IsChecked = false },
+                    new CheckboxItem() { Description = "Optie2", Value = "option2", IsChecked = false },
+                    new CheckboxItem() { Description = "Optie3", Value = "option3", IsChecked = false }
+                }
+            },
+            new CheckboxItem() { Description = "<i>Aanvrager <strong>met</strong> toeslagparter</i>", Value = "aanvrager_met_toeslagpartner" },
+            new CheckboxItem() { Description = "<u>Disabled</u>", Value = "disabled", IsDisabled = true }
+        };
+}
+<h3>2-way binding</h3>
+<p>Markup is filteed in displaying the value in the dropdown. It can still be used for displaying outside of the select</p>
+<NldsForm>
+    <NldsCheckbox Identifier="ch1" @bind-Items="CheckBox1">
+        <Legend><NldsLegend>Naam Beheerder</NldsLegend></Legend>
+        <Hint><NldsFormHint HintName="fullname">Bijvoorbeeld Frank Groothof</NldsFormHint></Hint>
+    </NldsCheckbox>
+    <p>Selected values:</p>
+    @foreach (var item in CheckBox1.Where(c => c.IsChecked))
+    {
+        <text>@((MarkupString)item.Description)</text>
+        <br />
+    }
+</NldsForm>
+<h3>Checkbox with error</h3>
+<p>For this to work horizontally set Body to class: theme--xxl-breakpoint</p>
+<NldsForm>
+    <NldsCheckbox Identifier="ch2" @bind-Items="@CheckBox2" ItemAlignment="ItemAlignment.Horizontal" ErrorText="Oops something went wrong.">
+        <Legend><NldsLegend>Naam Beheerder</NldsLegend></Legend>
+        <Hint><NldsFormHint HintName="fullname">Bijvoorbeeld Frank Sinatra</NldsFormHint></Hint>
+    </NldsCheckbox>
+    <p>Selected values:</p>
+    @foreach (var item in CheckBox2.Where(c => c.IsChecked))
+    {
+        <text>@((MarkupString)item.Description)</text>
+        <br />
+    }
+</NldsForm>
+<h3>Checkbox filter</h3>
+<NldsForm>
+    <NldsCheckbox Identifier="ch3" @bind-Items="@CheckBox3" IsFilter="true">
+        <Legend><NldsLegend>Naam Beheerder</NldsLegend></Legend>
+        <Hint><NldsFormHint HintName="fullname">Bijvoorbeeld Frank Sinatra</NldsFormHint></Hint>
+    </NldsCheckbox>
+    <p>Selected values:</p>
+    @foreach (var item in CheckBox3.Where(c => c.IsChecked))
+    {
+        <text>@((MarkupString)item.Description)</text>
+        <br />
+    }
+</NldsForm>
+<h3>Checkbox nested</h3>
+<NldsForm>
+    <NldsCheckbox Identifier="ch4" @bind-Items="@CheckBox4" IsFilter="true">
+        <Legend><NldsLegend>Naam Beheerder</NldsLegend></Legend>
+        <Hint><NldsFormHint HintName="fullname">Bijvoorbeeld Frank Sinatra</NldsFormHint></Hint>
+    </NldsCheckbox>
+    <p>Selected values:</p>
+    @foreach (var item in CheckBox4.Where(c => c.IsChecked))
+    {
+        <text>@((MarkupString)item.Description)</text>
+        if (item.HasSubItems)
+        {
+            foreach (var subitem in item.SubItems.Where(s => s.IsChecked))
+            {
+                <text>@((MarkupString)subitem.Description)</text>
+                <br />
+            }
+        }
+        <br />
+    }
+</NldsForm>
+<h2>Switch</h2>
+@code {
+    bool TheBoolean = true;
+}
+<NldsForm>
+    <NldsSwitch Identifier="a1.1" ErrorText="U dient akkoord te gaan" OnText="Akkoord" OffText="Niet Akkoord" @bind-Value="@TheBoolean">
+        <Label><NldsFormLabel>Switch Voorbeeld</NldsFormLabel></Label>
+        <Hint><NldsFormHint HintName="fullname">Bijvoorbeeld Frank Lammers</NldsFormHint></Hint>
+    </NldsSwitch>
+</NldsForm>
+@TheBoolean.ToString()
+
+<h2>Pagination</h2>
+@code {
+    string actionDone = string.Empty;
+    private void NextAction()
+    {
+        actionDone = "Next";
+        StateHasChanged();
+    }
+    private void PreviousAction()
+    {
+        actionDone = "Previous";
+        StateHasChanged();
+    }
+
+    private void PageAction(int page)
+    {
+        actionDone = $"Pagina {page}";
+        StateHasChanged();
+    }
+}
+<NldsForm>
+    <h3>De laatste actie die is uitgevoerd: <strong>@actionDone</strong></h3>
+    <h3>Next</h3>
+    <NldsPagination NextText="Volgende" OnNext="NextAction" />
+    <h3>Previous</h3>
+    <NldsPagination PreviousText="Vorige" OnPrevious="PreviousAction" />
+    <h3>Next & Previous</h3>
+    <NldsPagination PreviousText="Vorige" OnPrevious="PreviousAction" NextText="Volgende" OnNext="NextAction" />
+    @code {
+        bool ShowPrevious = false;
+    }
+    <h3>Next & Previous without showing previous (by ShowPrevious parameter)</h3>
+    <NldsPagination PreviousText="Vorige" OnPrevious="PreviousAction" ShowPrevious="ShowPrevious" NextText="Volgende" OnNext="NextAction" />
+    <h3>Next & Previous without showing previous (by optionally providing a default Action)</h3>
+    <NldsPagination PreviousText="Vorige" OnPrevious="@(ShowPrevious ? PreviousAction : default(Action))" NextText="Volgende" OnNext="NextAction" />
+    <h3>5 pages - first active</h3>
+    <NldsPagination PreviousText="Vorige" NextText="Volgende" ActivePage="1" NumberOfPages="5" OnPageClick="PageAction" />
+    <h3>5 pages - 3rd active</h3>
+    <NldsPagination PreviousText="Vorige" NextText="Volgende" ActivePage="3" NumberOfPages="5" OnPageClick="PageAction" />
+    <h3>5 pages - 3rd active, previous disabled</h3>
+    <NldsPagination ShowPrevious="false" PreviousText="Vorige" NextText="Volgende" ActivePage="3" NumberOfPages="5" OnPageClick="PageAction" />
+    <h3>5 pages - last active</h3>
+    <NldsPagination PreviousText="Vorige" NextText="Volgende" ActivePage="5" NumberOfPages="5" OnPageClick="PageAction" />
+    <h3>20 pages - 1rst active</h3>
+    <NldsPagination PreviousText="Vorige" NextText="Volgende" ActivePage="1" NumberOfPages="20" OnPageClick="PageAction" />
+    <h3>20 pages - 10th active</h3>
+    <NldsPagination PreviousText="Vorige" NextText="Volgende" ActivePage="10" NumberOfPages="20" OnPageClick="PageAction" />
+    <h3>20 pages - last active</h3>
+    <NldsPagination PreviousText="Vorige" NextText="Volgende" ActivePage="20" NumberOfPages="20" OnPageClick="PageAction" />
+    <h3>20 pages - 10th active and an even (4) middle numbers</h3>
+    <NldsPagination PreviousText="Vorige" NextText="Volgende" ActivePage="10" NumberOfPages="20" NumberOfPageNumbersToDisplay="4" OnPageClick="PageAction" />
+    <h3>20 pages - 10th active and 3 middle numbers</h3>
+    <NldsPagination PreviousText="Vorige" NextText="Volgende" ActivePage="10" NumberOfPages="20" NumberOfPageNumbersToDisplay="3" OnPageClick="PageAction" />
+    <h3>Andere screenreader informatie</h3>
+    <NldsPagination PreviousText="Vorige" NextText="Volgende" ActivePage="10" NumberOfPages="20" OnPageClick="PageAction" ScreenreaderPageDescription="Page" ScreenreaderActivePageDescription="You are now on page" />
+    @code {
+        int ActivePage = 1;
+        private void PageActionInteractive(int page)
+        {
+            ActivePage = page;
+            StateHasChanged();
+        }
+    }
+    <h3>20 pages - interactive</h3>
+    <NldsPagination PreviousText="Vorige" NextText="Volgende" ActivePage="@ActivePage" NumberOfPages="20" OnPageClick="PageActionInteractive" />
+</NldsForm>
+<h2>DefinitonList</h2>
+<h3>Standaard en horizontaal</h3>
+<NldsDefinitionList>
+    <NldsDefinitionListItem Title="Lorem ipsum dolor">
+        <Description>... sit amet, consectetur adipiscing elit. Praesent id quam pretium, lobortis lectus ut, lobortis lorem. Quisque in mauris id ante lacinia ornare nec sed mi. Aenean efficitur sagittis neque eget ultricies. Curabitur vestibulum rutrum massa, nec sollicitudin dui eleifend ultrices. Duis commodo accumsan risus in congue. Curabitur sodales volutpat elit, ut maximus lorem posuere et. Curabitur molestie nec lorem a semper. Donec interdum dui non euismod tempus. Praesent eu maximus arcu. Sed sed auctor leo.</Description>
+    </NldsDefinitionListItem>
+    <NldsDefinitionListItem Title="Duis at arcu">
+        <Description>... in ipsum rutrum porttitor id nec orci. Nam mollis vulputate diam, at finibus metus pharetra sed. Mauris in augue tellus. Nam hendrerit imperdiet mollis. Suspendisse porttitor, diam nec interdum euismod, mauris enim dignissim mauris, eget tincidunt mi metus eu purus. In dignissim leo at diam facilisis, id porttitor purus malesuada. Praesent quis dui ipsum. Phasellus consequat enim quis nunc sollicitudin, vel volutpat mi aliquet. Maecenas vel feugiat elit, venenatis consectetur dui. Curabitur pharetra nibh sit amet tortor fermentum luctus. Phasellus auctor elit at felis dapibus, eu suscipit metus aliquet. Proin sed sagittis justo. Aenean mollis, neque at luctus vulputate, ipsum augue lobortis eros, ac tempor turpis nisi a lorem. Integer non neque faucibus, consequat sapien vitae, tempus sapien. Cras turpis mauris, convallis sed interdum eu, pharetra ac sapien. In nulla nibh, sagittis ut turpis ac, feugiat cursus diam.</Description>
+    </NldsDefinitionListItem>
+    <NldsDefinitionListItem Title="Description with action">
+        <Description>3 2 1 Aaaaand Action</Description>
+        <Action><NldsDefinitionListAction LinkScreenReaderDescription="Beschrijving" Uri="http://google.com">Google!</NldsDefinitionListAction></Action>
+    </NldsDefinitionListItem>
+    <NldsDefinitionListItem ShowHorizontal="true" Title="Description with action 2">
+        <Description>3 2 1 Aaaaand Action 2</Description>
+        <Action><NldsDefinitionListAction LinkScreenReaderDescription="Beschrijving"><NldsIcon Icon="Icon.Info" /></NldsDefinitionListAction></Action>
+    </NldsDefinitionListItem>
+</NldsDefinitionList>
+<h3>Met large titles</h3>
+<NldsDefinitionList HasLargeTitles="true">
+    <NldsDefinitionListItem Title="Description with action">
+        <Description>3 2 1 Aaaaand Action</Description>
+        <Action><NldsDefinitionListAction LinkScreenReaderDescription="Beschrijving" Uri="http://google.com">Google!</NldsDefinitionListAction></Action>
+    </NldsDefinitionListItem>
+    <NldsDefinitionListItem ShowHorizontal="true" Title="Description with action 2">
+        <Description>3 2 1 Aaaaand Action 2</Description>
+        <Action><NldsDefinitionListAction LinkScreenReaderDescription="Beschrijving"><NldsIcon Icon="Icon.Info" /></NldsDefinitionListAction></Action>
+    </NldsDefinitionListItem>
+</NldsDefinitionList>
+<h2>Section</h2>
+<NldsSection Title="Ti<u>t</u>le">
+    sit amet, consectetur adipiscing elit. Praesent id quam pretium, lobortis lectus ut, lobortis lorem. Quisque in mauris id ante lacinia ornare nec sed mi. Aenean efficitur sagittis neque eget ultricies. Curabitur vestibulum rutrum massa, nec sollicitudin dui eleifend ultrices. Duis commodo accumsan risus in congue. Curabitur sodales volutpat elit, ut maximus lorem posuere et. Curabitur molestie nec lorem a semper. Donec interdum dui non euismod tempus. Praesent eu maximus arcu. Sed sed auctor leo.
+</NldsSection>
+<h3>With link</h3>
+<NldsSection Title="Title" Uri="#" UriText="Actienaam">
+    content
+</NldsSection>
+<h3>Innersection</h3>
+<p>Pre</p>
+<NldsSection IsInnerSection="true" Title="Title">
+    content
+</NldsSection>
+<p>post</p>
+<h3>Innersection met background kleur</h3>
+<p>Pre</p>
+<NldsSection BackgroundColor="@Color.Donkergeel" IsInnerSection="true" Title="Title">
+    content
+</NldsSection>
+<p>post</p>
+<h2>Hint</h2>
+<NldsHint Title="Dit is <u>de</u> titel">
+    <p>sit amet, <em>consectetur adipiscing</em> elit. Praesent id quam pretium, lobortis lectus ut, lobortis lorem. Quisque in mauris id ante lacinia ornare nec sed mi. Aenean efficitur sagittis neque eget ultricies. Curabitur vestibulum rutrum massa, nec sollicitudin dui eleifend ultrices. Duis commodo accumsan risus in congue. Curabitur sodales volutpat elit, ut maximus lorem posuere et. Curabitur molestie nec lorem a semper. Donec interdum dui non euismod tempus. Praesent eu maximus arcu. Sed sed auctor leo.</p>
+</NldsHint>
+<h2>Image</h2>
+<NldsImage Uri="https://nl-design-system.gitlab.io/nl-design-system/images/sample.jpg" Width="900" Alt="Studenten" />
+<h2>Card</h2>
+<h3>Normal</h3>
+<NldsCardList>
+    <NldsCard ImageUri="https://nl-design-system.gitlab.io/nl-design-system/images/img-1.png"><Content>Lees hier de nieuwste aansprakelijkheids&#8203;waarde&#8203;vaststellings&#8203;veranderingen</Content></NldsCard>
+    <NldsCard ImageUri="https://nl-design-system.gitlab.io/nl-design-system/images/img-2.png"><Content>Verzuimloket <u>niet</u> uitgefaseerd</Content></NldsCard>
+    <NldsCard ImageUri="https://nl-design-system.gitlab.io/nl-design-system/images/img-3.png"><Content>Opschonen vrijstellingen&#8203;register</Content></NldsCard>
+</NldsCardList>
+<h3>Only 1 in the list (and Square enforced)</h3>
+<NldsCardList>
+    <NldsCard Square="true" ImageUri="https://nl-design-system.gitlab.io/nl-design-system/images/img-1.png"><Content>Lees hier de nieuwste aansprakelijkheids&#8203;waarde&#8203;vaststellings&#8203;veranderingen</Content></NldsCard>
+</NldsCardList>
+<h3>small (web)</h3>
+<NldsCardList Small="true">
+    <NldsCard ImageUri="https://nl-design-system.gitlab.io/nl-design-system/images/img-1.png"><Content>Lees hier de nieuwste aansprakelijkheids&#8203;waarde&#8203;vaststellings&#8203;veranderingen</Content></NldsCard>
+    <NldsCard ImageUri="https://nl-design-system.gitlab.io/nl-design-system/images/img-2.png"><Content>Verzuimloket <u>niet</u> uitgefaseerd</Content></NldsCard>
+    <NldsCard ImageUri="https://nl-design-system.gitlab.io/nl-design-system/images/img-3.png"><Content>Opschonen vrijstellingen&#8203;register</Content></NldsCard>
+</NldsCardList>
+<h3>Backlink</h3>
+<NldsBackLink Uri="#" Title="Naar Primair onderwijs"><string>Primair</string> onderwijs</NldsBackLink>
+@code {
+    string[] Items = new string[]
+    {
+                        "violet, #a90061",
+                        "roze, #f092cd",
+                        "rood, #d52b1e",
+                        "robijnrood, #ca005d",
+                        "paars, #42145f",
+                        "oranje, #e17000",
+                        "lichtblauw, #8fcae7",
+                        "hemelblauw, #007bc7",
+                        "donkerblauw, #01689b",
+                        "geel, #f9e11e",
+                        "donkergeel, #ffb612",
+                        "mintgroen, #76d2b6",
+                        "mosgroen, #767b00",
+                        "groen, #39870c",
+                        "donkergroen, #275937",
+                        "bruin, #94710a",
+                        "donkerbruin, #673327",
+                        "grijs-1, #f3f3f3",
+                        "grijs-2, #e6e6e6",
+                        "grijs-3, #cccccc",
+                        "grijs-4, #b4b4b4",
+                        "grijs-5, #999999",
+                        "grijs-6, #696969",
+                        "grijs-7, #535353"
+                                                                                                                                                                                                                                 };
+    string SelectedComboboxValue = string.Empty;
+}
+<h2>Combobox</h2>
+<NldsForm>
+    <NldsCombobox Identifier="com" Items="@Items" @bind-Value="SelectedComboboxValue" Size="InputSize.ExtraLarge" ErrorText="Geen kleur geselecteerd">
+        <Label><NldsFormLabel>Kleur</NldsFormLabel></Label>
+        <Hint><NldsFormHint HintName="kleur">Voer een kleur of kleurcode in</NldsFormHint></Hint>
+    </NldsCombobox>
+</NldsForm>
+<p>Geselecteerde Waarde: @SelectedComboboxValue</p>
+<h2>Spinner</h2>
+<NldsSpinner FullPage="true">
+    <DisplayText>Zoals bijvoorbeeld deze tekst die nog geladen moet worden. Het element waar de <span lang="en-US">spinner</span> op verschijnt krijgt ook een lichtere <span lang="en-US">opacity</span>.</DisplayText>
+    <ScreenReaderText>Aan het laden</ScreenReaderText>
+</NldsSpinner>
+<h3>Notifications</h3>
+<NldsNotification Type="Notification.Info" TypeText="Ter <u>Info</u>rmatie" Title="Voor <u>de</u> veiligheid">
+    Vanwege de veiligheid sturen we u het <u>wachtwoord</u> en tokengenerator in 2 aparte enveloppen.
+</NldsNotification>
+<NldsNotification Type="Notification.Warning" TypeText="LET OP" Title="Bevoegd gezag moet dit document ondertekenen">
+    Zonder handtekening en kopie van het identiteitsbewijs van het bevoegd gezag nemen we de aanvraag niet in behandeling.
+</NldsNotification>
+<NldsNotification Type="Notification.Success" TypeText="GELUKT" Title="Aanvraag ontvangen">
+    Wij hebben uw aanvraag ontvangen en nemen deze zo snel mogelijk in behandeling.
+</NldsNotification>
+<NldsNotification Type="Notification.Error" TypeText="STORING" Title="Er gaat iets niet helemaal lekker">
+    De flux capacitor heeft de geest gegeven.
+</NldsNotification>
+<NldsNotification Type="Notification.Warning" TypeText="Bugs" Title="Eh, what's up doc?" @ref="@CloseDoc" />
+<h3>With Close button</h3>
+@code {
+    NldsNotification CloseDoc;
+    private void CloseNotification()
+    {
+        CloseDoc.Close();
+    }
+}
+<button @onclick="CloseNotification">An external button to close the "Bugs" notification</button>
+<NldsNotification Type="Notification.Error" TypeText="Boom" Title="ACME Dynamite" CloseButtonText="Sl<u>u</u>it" />
+<h2>Tooltip</h2>
+<NldsTooltip Tip="Dit is <u>de</u> Tip">Hover hierover; er zit een tip op</NldsTooltip>
+<h3>Tooltip met Icon</h3>
+<NldsTooltip UseIcon="true" Tip="Dit is <u>de</u> Tip op een Icon"></NldsTooltip>
+<h2>ContentHeader</h2>
+<NldsContentHeader Title="This is the title">
+    <p>Test</p>
+</NldsContentHeader>
+<h2>Meta</h2>
+<NldsMeta>13 november 2018</NldsMeta>
+<NldsMeta>Grat, Senior tester/product owner testautomatisering</NldsMeta>
+<h3>Meta stappen onder een kop</h3>
+<NldsContentHeader Title="Contactgegevens instelling">
+    <p>
+        <NldsMeta IsInHeader="true" IsProgress="true">
+            Stap 1 van 4 – Eerste opvang nieuwkomers VO
+        </NldsMeta>
+        <NldsMeta IsInHeader="true" IsProgress="true">
+            Stap 2 van 4 – Tweede opvang nieuwkomers VO
+        </NldsMeta>
+    </p>
+</NldsContentHeader>
+<h2>Quote</h2>
+<NldsQuote>
+    <Quote>
+        Praesent ullamcorper lacinia nisl, vel vulputate elit tempus tincidunt. Sed dictum ultrices finibus. Praesent at venenatis sapien. Nam sed quam pretium, dignissim sapien euismod, tempus urna. Maecenas mauris odio, malesuada sit amet lectus faucibus, ultrices ullamcorper enim.
+    </Quote>
+</NldsQuote>
+<h3>Quote met afbeelding</h3>
+<NldsQuote ImageUri="https://nl-design-system.gitlab.io/nl-design-system/images/ceasar.jpg" ImageDescription="Julius Caesar">
+    <Quote>
+        Praesent ullamcorper lacinia nisl, vel vulputate elit tempus tincidunt. Sed dictum ultrices finibus.
+    </Quote>
+    <MetaContent>
+        <NldsMeta>– Julius Ceasar</NldsMeta>
+        <br />
+        <a href="#" title="Lees meer">Lees meer over lorum ipsum</a>
+    </MetaContent>
+</NldsQuote>
+<h2>Files</h2>
+<h3>List</h3>
+<NldsFileList>
+    <NldsFile IsPartOfList="true" DeleteText="Verwijder" FileName="c50bed25.jpg" FileInfo="JPG, 396.05 kB" />
+    <NldsFile IsPartOfList="true" DeleteText="Verwijder" FileName="formulier.pdf" FileInfo="PDF, 1.05 mB" />
+</NldsFileList>
+<h3>Single File</h3>
+<NldsFile FileName="c50bed25.jpg" FileInfo="JPG, 396.05 kB" />
+<h2>Video</h2>
+@code {
+    SubtitleInformation subtitles = new SubtitleInformation
+    {
+        Label = "Nederlands",
+        Language = "nl-NL",
+        Uri = "https://nl-design-system.gitlab.io/nl-design-system/subtitles/video.vtt"
+    };
+}
+<NldsVideo Width="100%" Uri="https://nl-design-system.gitlab.io/nl-design-system/images/SampleVideo_1280x720_1mb.mp4" PosterUri="https://nl-design-system.gitlab.io/nl-design-system/images/SampleVideo_1280x720_1mb.png" Subtitles="@subtitles"></NldsVideo>
+
+<h2>Chart</h2>
+<NldsChart Percentage="80" TextBelow="over <u>van</u> € 10.000,00" Title="Overgebleven <u>leenruimte</u> studiejaar 2018/2019">
+    € 2.000,00
+</NldsChart>
+<h3>Color en small text</h3>
+<NldsChart Percentage="80" Color="Color.Oranje" TextBelow="over <u>van</u> € 10.000,00" Title="Overgebleven leenruimte studiejaar 2018/2019">
+    <NldsChartSmallText>Hoeveel is er over?</NldsChartSmallText>
+    € 2.000,00
+    <NldsChartSmallText>Tweeduizend!</NldsChartSmallText>
+</NldsChart>
+<h3>Draw and destroy with event</h3>
+@code {
+    private NldsChart Chart1 { get; set; }
+    private void Chart1Draw()
+    {
+        Chart1.Draw();
+    }
+    private void Chart1Destroy()
+    {
+        Chart1.Destroy();
+    }
+}
+<NldsChart @ref="Chart1" DrawOnCreate="false" Percentage="80" TextBelow="over <u>van</u> € 10.000,00" Title="Overgebleven <u>leenruimte</u> studiejaar 2018/2019">
+    € 2.000,00
+</NldsChart>
+<button @onclick="Chart1Draw">Draw Chart</button>
+<button @onclick="Chart1Destroy">Destroy Chart</button>
+<h2>Tabs (2nd tab is active)</h2>
+<NldsTabs>
+    <Tabs>
+        <NldsTab Identifier="1">Tab 1 met <u>een</u> lange titel</NldsTab>
+        <NldsTab Identifier="2" IsActive="true">Tab 2<NldsBadge Number="2" Color="Color.Oranje" /></NldsTab>
+        <NldsTab Identifier="3"><NldsIcon Icon="Icon.Delete" />Tab 3</NldsTab>
+        <NldsTab Identifier="4" IsDisabled="true">Disabled</NldsTab>
+        <NldsTab Identifier="5">Tab 5</NldsTab>
+        <NldsTab Identifier="6">Another tab (6)</NldsTab>
+        <NldsTab Identifier="7">Another tab (7)</NldsTab>
+        <NldsTab Identifier="8">Another tab (8)</NldsTab>
+        <NldsTab Identifier="9">Another tab (9)</NldsTab>
+        <NldsTab Identifier="10">Another tab (10)</NldsTab>
+    </Tabs>
+    <TabContents>
+        <NldsTabContent Identifier="1">
+            <h3>Panel 1</h3>
+            <p>Panel 1</p>
+        </NldsTabContent>
+        <NldsTabContent Identifier="2"><p>Panel 2</p></NldsTabContent>
+        <NldsTabContent Identifier="3"><p>Panel 3</p></NldsTabContent>
+        <NldsTabContent Identifier="4"><p>This tab is disabled :'(</p></NldsTabContent>
+        <NldsTabContent Identifier="5"><p>Panel 5</p></NldsTabContent>
+        <NldsTabContent Identifier="6"><p>Panel 6</p></NldsTabContent>
+        <NldsTabContent Identifier="7"><p>Panel 7</p></NldsTabContent>
+        <NldsTabContent Identifier="8"><p>Panel 8</p></NldsTabContent>
+        <NldsTabContent Identifier="9"><p>Panel 9</p></NldsTabContent>
+        <NldsTabContent Identifier="10"><p>Panel 10</p></NldsTabContent>
+    </TabContents>
+</NldsTabs>
+<h3>Inline</h3>
+<NldsTabs Inline="true">
+    <Tabs>
+        <NldsTab Identifier="1_">Tab 1 met <u>een</u> lange titel</NldsTab>
+        <NldsTab Identifier="2_">Tab 2<NldsBadge Number="2" Color="Color.Oranje" /></NldsTab>
+        <NldsTab Identifier="3_"><NldsIcon Icon="Icon.Delete" />Tab 3</NldsTab>
+        <NldsTab Identifier="4_" IsDisabled="true">Disabled</NldsTab>
+        <NldsTab Identifier="5_">Tab 5</NldsTab>
+        <NldsTab Identifier="6_">Another tab (6)</NldsTab>
+        <NldsTab Identifier="7_">Another tab (7)</NldsTab>
+        <NldsTab Identifier="8_">Another tab (8)</NldsTab>
+        <NldsTab Identifier="9_">Another tab (9)</NldsTab>
+        <NldsTab Identifier="10_">Another tab (10)</NldsTab>
+    </Tabs>
+    <TabContents>
+        <NldsTabContent Identifier="1_">
+            <h3>Panel 1</h3>
+            <p>Panel 1</p>
+        </NldsTabContent>
+        <NldsTabContent Identifier="2_"><p>Panel 2</p></NldsTabContent>
+        <NldsTabContent Identifier="3_"><p>Panel 3</p></NldsTabContent>
+        <NldsTabContent Identifier="4_"><p>This tab is disabled :'(</p></NldsTabContent>
+        <NldsTabContent Identifier="5_"><p>Panel 5</p></NldsTabContent>
+        <NldsTabContent Identifier="6_"><p>Panel 6</p></NldsTabContent>
+        <NldsTabContent Identifier="7_"><p>Panel 7</p></NldsTabContent>
+        <NldsTabContent Identifier="8_"><p>Panel 8</p></NldsTabContent>
+        <NldsTabContent Identifier="9_"><p>Panel 9</p></NldsTabContent>
+        <NldsTabContent Identifier="10_"><p>Panel 10</p></NldsTabContent>
+    </TabContents>
+</NldsTabs>
+<h3>Methods on tabs</h3>
+@code {
+    private int? ActiveTab = null;
+    private NldsTabs Tabsref;
+    private void OpenTab1()
+    {
+        Tabsref.OpenTab(0);
+    }
+    private void OpenTab2()
+    {
+        Tabsref.OpenTab(1);
+    }
+    private void OpenTab3()
+    {
+        Tabsref.OpenTab(2);
+    }
+    private void OpenTab4()
+    {
+        Tabsref.OpenTab(3);
+    }
+    private void DisableTab2()
+    {
+        Tabsref.DisableTab(1);
+    }
+    private void EnableTab2()
+    {
+        Tabsref.EnableTab(1);
+    }
+    private void DestroyTabs()
+    {
+        Tabsref.Destroy();
+    }
+    private async void GetActiveTab()
+    {
+        ActiveTab = await Tabsref.GetActiveTabIndexAsync();
+        StateHasChanged();
+    }
+}
+<NldsTabs @ref="@Tabsref" Identifier="tabsname">
+    <Tabs>
+        <NldsTab Identifier="Tab1_id">Tab 1</NldsTab>
+        <NldsTab Identifier="Tab2_id">Tab 2</NldsTab>
+        <NldsTab Identifier="Tab3_id">Tab 3</NldsTab>
+        <NldsTab Identifier="Tab4_id">Tab 4</NldsTab>
+    </Tabs>
+    <TabContents>
+        <NldsTabContent Identifier="Tab1_id"><h3>Panel 1</h3></NldsTabContent>
+        <NldsTabContent Identifier="Tab2_id"><h3>Panel 2</h3></NldsTabContent>
+        <NldsTabContent Identifier="Tab3_id"><h3>Panel 3</h3></NldsTabContent>
+        <NldsTabContent Identifier="Tab4_id"><h3>Panel 4</h3></NldsTabContent>
+    </TabContents>
+</NldsTabs>
+<button @onclick="OpenTab1">Open Tab 1</button>
+<button @onclick="OpenTab2">Open Tab 2</button>
+<button @onclick="OpenTab3">Open Tab 3</button>
+<button @onclick="OpenTab4">Open Tab 4</button>
+<button @onclick="GetActiveTab">Check de actieve tab</button>
+<button @onclick="DisableTab2">Disable Tab 2</button>
+<button @onclick="EnableTab2">Enable Tab 2</button>
+<button @onclick="DestroyTabs">Destroy Tabs</button>
+<p>Active Tab: @ActiveTab</p>
+<h2>Table</h2>
+<NldsTable Identifier="tabelbeschrijving">
+    <Label>Tabelvoorbeeld <u>per</u> jaar.</Label>
+    <Header>
+        <NldsTableRow>
+            <NldsTableCell />
+            <NldsTableCell>2014</NldsTableCell>
+            <NldsTableCell>2015</NldsTableCell>
+            <NldsTableCell>2016</NldsTableCell>
+        </NldsTableRow>
+    </Header>
+    <Body>
+        <NldsTableRow>
+            <NldsTableCell IsHeader="true">Foo</NldsTableCell>
+            <NldsTableCell>124</NldsTableCell>
+            <NldsTableCell>42</NldsTableCell>
+            <NldsTableCell>252</NldsTableCell>
+        </NldsTableRow>
+        <NldsTableRow>
+            <NldsTableCell IsHeader="true">Bar</NldsTableCell>
+            <NldsTableCell>42</NldsTableCell>
+            <NldsTableCell>526</NldsTableCell>
+            <NldsTableCell>12</NldsTableCell>
+        </NldsTableRow>
+        <NldsTableRow>
+            <NldsTableCell IsHeader="true">Baz</NldsTableCell>
+            <NldsTableCell>736</NldsTableCell>
+            <NldsTableCell>367</NldsTableCell>
+            <NldsTableCell>234</NldsTableCell>
+        </NldsTableRow>
+    </Body>
+</NldsTable>
+<h3>Responsive Striped & Hoverable Table met caption with selected rows</h3>
+<NldsTable Identifier="tabelbeschrijving2" IsResponsive="true" IsStriped="true" IsHoverable="true">
+    <Label>Tabelvoorbeeld <u>per</u> jaar.</Label>
+    <Caption>Voorbeeld automatische <span lang="en-US">responsive</span> tabel</Caption>
+    <Header>
+        <NldsTableRow>
+            <NldsTableCell />
+            <NldsTableCell>2014</NldsTableCell>
+            <NldsTableCell>2015</NldsTableCell>
+            <NldsTableCell>2016</NldsTableCell>
+        </NldsTableRow>
+    </Header>
+    <Body>
+        <NldsTableRow>
+            <NldsTableCell IsHeader="true">Foo</NldsTableCell>
+            <NldsTableCell>124</NldsTableCell>
+            <NldsTableCell>42</NldsTableCell>
+            <NldsTableCell>252</NldsTableCell>
+        </NldsTableRow>
+        <NldsTableRow IsSelected="true">
+            <NldsTableCell IsHeader="true">Bar</NldsTableCell>
+            <NldsTableCell>42</NldsTableCell>
+            <NldsTableCell>526</NldsTableCell>
+            <NldsTableCell>12</NldsTableCell>
+        </NldsTableRow>
+        <NldsTableRow IsSelected="true">
+            <NldsTableCell IsHeader="true">Baz</NldsTableCell>
+            <NldsTableCell>736</NldsTableCell>
+            <NldsTableCell>367</NldsTableCell>
+            <NldsTableCell>234</NldsTableCell>
+        </NldsTableRow>
+    </Body>
+</NldsTable>
+<h3>Complexe Tabellen</h3>
+<NldsTable Identifier="tabelbeschrijving3" IsStriped="true" IsHoverable="true" UseFullWidth="true" UseSmallFont="true">
+    <Label>Tabelvoorbeeld <u>per</u> jaar.</Label>
+    <Header>
+        <NldsTableRow>
+            <NldsTableCell Colspan="2" />
+            <NldsTableCell Colspan="2">2011 - 2012</NldsTableCell>
+            <NldsTableCell Colspan="2">2012 - 2013</NldsTableCell>
+            <NldsTableCell Colspan="2">2013 - 2014</NldsTableCell>
+            <NldsTableCell Colspan="2">2014 - 2015</NldsTableCell>
+        </NldsTableRow>
+        <NldsTableRow>
+            <NldsTableCell Identifier="brin">Brinnr</NldsTableCell>
+            <NldsTableCell Identifier="name">Naam Instelling</NldsTableCell>
+            <NldsTableCell Identifier="i1112" Headers="yr1112"><abbr title="Instelling" tabindex="0">Inst.</abbr></NldsTableCell>
+            <NldsTableCell Identifier="v1112" Headers="yr1112">Vgl Grp</NldsTableCell>
+            <NldsTableCell Identifier="i1213" Headers="yr1113"><abbr title="Instelling" tabindex="0">Inst.</abbr></NldsTableCell>
+            <NldsTableCell Identifier="v1213" Headers="yr1113">Vgl Grp</NldsTableCell>
+            <NldsTableCell Identifier="i1314" Headers="yr1114"><abbr title="Instelling" tabindex="0">Inst.</abbr></NldsTableCell>
+            <NldsTableCell Identifier="v1314" Headers="yr1114">Vgl Grp</NldsTableCell>
+            <NldsTableCell Identifier="i1415" Headers="yr1115"><abbr title="Instelling" tabindex="0">Inst.</abbr></NldsTableCell>
+            <NldsTableCell Identifier="v1415" Headers="yr1115">Vgl Grp</NldsTableCell>
+        </NldsTableRow>
+    </Header>
+    <Body>
+        <NldsTableRow>
+            <NldsTableCell Headers="brin">01IC</NldsTableCell>
+            <NldsTableCell IsHeader="true" Headers="name" Identifier="name0">AOC Oost</NldsTableCell>
+            <NldsTableCell Class="align-right" Headers="name0 i1112 yr1112">81,1%</NldsTableCell>
+            <NldsTableCell Class="align-right" Headers="name0 v1112 yr1112">71,1%</NldsTableCell>
+            <NldsTableCell Class="align-right" Headers="name0 i1213 yr1213">79,8</NldsTableCell>
+            <NldsTableCell Class="align-right" Headers="name0 v1213 yr1213">74,7%</NldsTableCell>
+            <NldsTableCell Class="align-right" Headers="name0 i1314 yr1314">77,1%</NldsTableCell>
+            <NldsTableCell Class="align-right" Headers="name0 v1314 yr1314">74,6%</NldsTableCell>
+            <NldsTableCell Class="align-right" Headers="name0 i1415 yr1415">83,7%</NldsTableCell>
+            <NldsTableCell Class="align-right" Headers="name0 v1415 yr1415">77,2%</NldsTableCell>
+        </NldsTableRow>
+        <NldsTableRow>
+            <NldsTableCell Headers="brin">01NJ</NldsTableCell>
+            <NldsTableCell IsHeader="true" Headers="name" Identifier="name1">AOC Oost</NldsTableCell>
+            <NldsTableCell Headers="name1 i1112 yr1112">75,5%</NldsTableCell>
+            <NldsTableCell Headers="name1 v1112 yr1112">71,1%</NldsTableCell>
+            <NldsTableCell Headers="name1 i1213 yr1213">77,1</NldsTableCell>
+            <NldsTableCell Headers="name1 v1213 yr1213">74,7%</NldsTableCell>
+            <NldsTableCell Headers="name1 i1314 yr1314">75,6%</NldsTableCell>
+            <NldsTableCell Headers="name1 v1314 yr1314">74,6%</NldsTableCell>
+            <NldsTableCell Headers="name1 i1415 yr1415">75,8%</NldsTableCell>
+            <NldsTableCell Headers="name1 v1415 yr1415">77,2%</NldsTableCell>
+        </NldsTableRow>
+        <NldsTableRow>
+            <NldsTableCell Headers="brin">01OE</NldsTableCell>
+            <NldsTableCell IsHeader="true" Headers="name" Identifier="name2">AOC Oost</NldsTableCell>
+            <NldsTableCell Headers="name2 i1112 yr1112">70,0%</NldsTableCell>
+            <NldsTableCell Headers="name2 v1112 yr1112">71,1%</NldsTableCell>
+            <NldsTableCell Headers="name2 i1213 yr1213">73,7</NldsTableCell>
+            <NldsTableCell Headers="name2 v1213 yr1213">74,7%</NldsTableCell>
+            <NldsTableCell Headers="name2 i1314 yr1314">75,6%</NldsTableCell>
+            <NldsTableCell Headers="name2 v1314 yr1314">74,6%</NldsTableCell>
+            <NldsTableCell Headers="name2 i1415 yr1415">76,7%</NldsTableCell>
+            <NldsTableCell Headers="name2 v1415 yr1415">77,2%</NldsTableCell>
+        </NldsTableRow>
+        <NldsTableRow>
+            <NldsTableCell Headers="brin">11UL</NldsTableCell>
+            <NldsTableCell IsHeader="true" Headers="name" Identifier="name3">AOC Oost</NldsTableCell>
+            <NldsTableCell Headers="name3 i1112 yr1112">71,0%</NldsTableCell>
+            <NldsTableCell Headers="name3 v1112 yr1112">71,1%</NldsTableCell>
+            <NldsTableCell Headers="name3 i1213 yr1213">76,4</NldsTableCell>
+            <NldsTableCell Headers="name3 v1213 yr1213">74,7%</NldsTableCell>
+            <NldsTableCell Headers="name3 i1314 yr1314">69,1%</NldsTableCell>
+            <NldsTableCell Headers="name3 v1314 yr1314">74,6%</NldsTableCell>
+            <NldsTableCell Headers="name3 i1415 yr1415">79,1%</NldsTableCell>
+            <NldsTableCell Headers="name3 v1415 yr1415">77,2%</NldsTableCell>
+        </NldsTableRow>
+        <NldsTableRow>
+            <NldsTableCell Headers="brin">12VI</NldsTableCell>
+            <NldsTableCell IsHeader="true" Headers="name" Identifier="name4">AOC Oost</NldsTableCell>
+            <NldsTableCell Headers="name4 i1112 yr1112">77,4%</NldsTableCell>
+            <NldsTableCell Headers="name4 v1112 yr1112">71,1%</NldsTableCell>
+            <NldsTableCell Headers="name4 i1213 yr1213">80,8</NldsTableCell>
+            <NldsTableCell Headers="name4 v1213 yr1213">74,7%</NldsTableCell>
+            <NldsTableCell Headers="name4 i1314 yr1314">78,8%</NldsTableCell>
+            <NldsTableCell Headers="name4 v1314 yr1314">74,6%</NldsTableCell>
+            <NldsTableCell Headers="name4 i1415 yr1415">78,7%</NldsTableCell>
+            <NldsTableCell Headers="name4 v1415 yr1415">77,2%</NldsTableCell>
+        </NldsTableRow>
+    </Body>
+</NldsTable>
+<h2>List Item</h2>
+<NldsList>
+    <NldsListItem>Test 1</NldsListItem>
+    <NldsListItem>Test 2</NldsListItem>
+    <NldsListItem>Test 3</NldsListItem>
+</NldsList>
+<h3>- Chevrons</h3>
+<NldsList Type="ListType.Chrevrons">
+    <NldsListItem>Test 1</NldsListItem>
+    <NldsListItem>Test 2</NldsListItem>
+    <NldsListItem>Test 3</NldsListItem>
+</NldsList>
+<h3>- Dash</h3>
+<NldsList Type="ListType.Dash">
+    <NldsListItem>Test 1</NldsListItem>
+    <NldsListItem>Test 2</NldsListItem>
+    <NldsListItem>Test 3</NldsListItem>
+</NldsList>
+<h3>- Decimal</h3>
+<NldsList Type="ListType.Decimal">
+    <NldsListItem>Test 1</NldsListItem>
+    <NldsListItem>Test 2</NldsListItem>
+    <NldsListItem>Test 3</NldsListItem>
+</NldsList>
+<h3>- Decimal Circled</h3>
+<NldsList Type="ListType.DecimalCircled">
+    <NldsListItem>Test 1</NldsListItem>
+    <NldsListItem>Test 2</NldsListItem>
+    <NldsListItem>Test 3</NldsListItem>
+</NldsList>
+<h3>- Filter</h3>
+<NldsList Type="ListType.Filter">
+    <NldsListItem>Test 1</NldsListItem>
+    <NldsListItem>Test 2</NldsListItem>
+    <NldsListItem>Test 3</NldsListItem>
+</NldsList>
+<h3>- Filter Inline</h3>
+<NldsList Type="ListType.FilterInline">
+    <NldsListItem>Test 1</NldsListItem>
+    <NldsListItem>Test 2</NldsListItem>
+    <NldsListItem>Test 3</NldsListItem>
+</NldsList>
+<h3>- Links</h3>
+<NldsList Type="ListType.Links">
+    <NldsListItem>Test 1</NldsListItem>
+    <NldsListItem>Test 2</NldsListItem>
+    <NldsListItem>Test 3</NldsListItem>
+</NldsList>
+<h3>- Search</h3>
+<NldsList Type="ListType.Search">
+    <NldsListItem>
+        <a href="https://www.inburgeren.nl/" class="is-h4" target="_blank" rel="noopener">Inburgeren in Nederland – index</a>
+        <p>
+            Home · <strong>Inburgeren</strong>: hoe moet dat. Asielmigranten; School en leren;
+            Inburgeringsplicht; Inburgeringsexamen; Staatsexamen NT2; Geen examen
+            doen; Meer tijd nodig; Niet op tijd klaar; Zelf verantwoordelijk. Examen doen.
+            Participatieverklaring; Schrijven; Spreken; Luisteren; Lezen; Kennis Nederlandse
+            Maatschappij&nbsp;...
+        </p>
+    </NldsListItem>
+    <NldsListItem>
+        <a href="https://www.inburgeren.nl/examen-doen.jsp" class="is-h4" target="_blank" rel="noopener">Inburgeren in Nederland – examen doen</a>
+        <p>
+            Op het inburgeringsexamen bekijkt DUO of u genoeg weet over Nederland. En of
+            uw Nederlands goed genoeg is. Als u slaagt, krijgt u het inburgeringsdiploma. U
+            kunt de examens het beste oefenen in Google Chrome of in Firefox. Het examen
+            Spreken (Spreekvaardigheid) kunt u alleen oefenen in Firefox.
+        </p>
+    </NldsListItem>
+</NldsList>
+<h3>- Subjects</h3>
+<NldsList Type="ListType.Subjects" HasColumns="true">
+    <NldsListItem>
+        <NldsListILink Uri="#">Portaalbeheer</NldsListILink>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla finibus cursus.</p>
+    </NldsListItem>
+    <NldsListItem>
+        <NldsListILink Uri="#">Onderwerp</NldsListILink>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla finibus cursus.</p>
+    </NldsListItem>
+    <NldsListItem>
+        <NldsListILink Uri="#">Onderwerp</NldsListILink>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla finibus cursus.</p>
+    </NldsListItem>
+    <NldsListItem>
+        <NldsListILink Uri="#">Onderwerp</NldsListILink>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla finibus cursus.</p>
+    </NldsListItem>
+</NldsList>
+<h3>- Columns (decimal)</h3>
+<NldsList Type="ListType.Decimal" HasColumns="true">
+    <NldsListItem>Test 1</NldsListItem>
+    <NldsListItem>Test 2</NldsListItem>
+    <NldsListItem>Test 3</NldsListItem>
+    <NldsListItem>Test 4</NldsListItem>
+</NldsList>
+<h3>- Nested list</h3>
+<NldsList>
+    <NldsListItem>Test 1</NldsListItem>
+    <NldsListItem>
+        Test 2
+        <NldsList>
+            <NldsListItem>Test 2.1</NldsListItem>
+            <NldsListItem>Test 2.2</NldsListItem>
+            <NldsListItem>Test 2.3</NldsListItem>
+            <NldsListItem>Test 2.4</NldsListItem>
+        </NldsList>
+    </NldsListItem>
+    <NldsListItem>Test 3</NldsListItem>
+</NldsList>
+<h3>- Nested list (decimal)</h3>
+<NldsList Type="ListType.Decimal">
+    <NldsListItem>Test 1</NldsListItem>
+    <NldsListItem>
+        Test 2
+        <NldsList>
+            <NldsListItem>Test 2.1</NldsListItem>
+            <NldsListItem>Test 2.2</NldsListItem>
+            <NldsListItem>Test 2.3</NldsListItem>
+            <NldsListItem>Test 2.4</NldsListItem>
+        </NldsList>
+    </NldsListItem>
+    <NldsListItem>Test 3</NldsListItem>
+</NldsList>
+<h3>- Nested list withoud inherited type</h3>
+<NldsList Type="ListType.Decimal">
+    <NldsListItem>Test 1</NldsListItem>
+    <NldsListItem>
+        Test 2
+        <NldsList Type="ListType.Dash">
+            <NldsListItem>Test 2.1</NldsListItem>
+            <NldsListItem>Test 2.2</NldsListItem>
+            <NldsListItem>Test 2.3</NldsListItem>
+            <NldsListItem>Test 2.4</NldsListItem>
+        </NldsList>
+    </NldsListItem>
+    <NldsListItem>Test 3</NldsListItem>
+</NldsList>
+<h3>BottomBar</h3>
+<p>Zie onderkant pagina voor een voorbeeld van de bottom bar.</p>
+<NldsBottomBar ScreenReaderText="Dit is een voorbeeld Bottom bar">
+    <p>De bottom bar kan in principe alles bevatten. Dus ook een <NldsButton Type="ButtonType.Primary">Knop</NldsButton></p>
+</NldsBottomBar>
+<h2>Background</h2>
+<NldsBackground Color="Color.DonkerBlauw">Dit is een test</NldsBackground>
+<h2>Model</h2>
+@code{
+    private NldsModal Modal1 { get; set; }
+    private NldsModal Modal2 { get; set; }
+    private NldsModal Modal3 { get; set; }
+    private NldsModal Modal4 { get; set; }
+    private NldsModal Modal5 { get; set; }
+
+    private void OpenModal1()
+    {
+        Modal1.Open();
+    }
+
+    private void OpenModal2()
+    {
+        Modal2.Open();
+    }
+
+    private void OpenModal3()
+    {
+        Modal3.Open();
+    }
+
+    private void OpenModal4()
+    {
+        Modal4.Open();
+    }
+
+    private void OpenModal5()
+    {
+        Modal5.Open();
+    }
+}
+
+<NldsModal @ref="Modal1" CloseText="Close" Title="De titel" ScreenReaderText="Dit is de screenreaderTekst">
+    <Content>
+        Dit is de inhoud.
+    </Content>
+    <Footer>This is where the action is <NldsButton Type="ButtonType.Primary">OK!?</NldsButton></Footer>
+</NldsModal>
+<button @onclick="OpenModal1">Open Modal</button>
+<h3>Modal Zonder Close Button en geen backdrop, geen footer</h3>
+<NldsModal @ref="Modal2" HasCloseButton="false" ScreenReaderText="Dit is de screenreaderTekst" HasBackDrop="false">
+    <Content>Where the action at? (Press Escape)</Content>
+</NldsModal>
+<button @onclick="OpenModal2">Open Modal</button>
+<h3>modal: Width: Extra large, height:  small</h3>
+<NldsModal @ref="Modal3" CloseText="Close" Title="De titel" ScreenReaderText="Dit is de screenreaderTekst" Width="ModalSize.ExtraLarge" Height="ModalSize.Small">
+    <Content>
+        <p>
+            Leverage agile frameworks to provide a robust synopsis for
+            high level overviews. Iterative approaches to corporate strategy
+            foster collaborative thinking to further the overall value
+            proposition. Organically grow the holistic world view of
+            disruptive innovation via workplace diversity and empowerment.
+        </p>
+        <p>
+            Bring to the table win-win survival strategies to ensure
+            proactive domination. At the end of the day, going forward,
+            a new normal that has evolved from generation X is on the
+            runway heading towards a streamlined cloud solution. User
+            generated content in real-time will have multiple touchpoints
+            for offshoring.
+        </p>
+        <p>
+            Capitalise on low hanging fruit to identify a ballpark value
+            added activity to beta test.  Override the digital divide
+            with additional clickthroughs from DevOps. Nanotechnology
+            immersion along the information highway will close the loop
+            on focusing solely on the bottom line.
+        </p>
+        <p>
+            Podcasting operational change management inside of workflows
+            to establish a framework. Taking seamless key performance
+            indicators offline to maximise the long tail. Keeping your
+            eye on the ball while performing a deep dive on the start-up
+            mentality to derive convergence on cross-platform integration.
+        </p>
+        <p>
+            Collaboratively administrate empowered markets via plug-and-play
+            networks. Dynamically procrastinate B2C users after installed
+            base benefits. Dramatically visualize customer directed
+            convergence without revolutionary ROI.
+        </p>
+        <p>
+            Efficiently unleash cross-media information without
+            cross-media value. Quickly maximize timely deliverables for
+            real-time schemas. Dramatically maintain clicks-and-mortar
+            solutions without functional solutions.
+        </p>
+        <p>
+            Completely synergize resource taxing relationships via premier
+            niche markets. Professionally cultivate one-to-one customer
+            service with robust ideas. Dynamically innovate
+            resource-leveling customer service for state of the art
+            customer service.
+        </p>
+        <p>
+            Objectively innovate empowered manufactured products whereas
+            parallel platforms. Holisticly predominate extensible testing
+            procedures for reliable supply chains. Dramatically engage
+            top-line web services vis-a-vis cutting-edge deliverables.
+        </p>
+        <p>
+            Proactively envisioned multimedia based expertise and cross-media
+            growth strategies. Seamlessly visualize quality intellectual
+            capital without superior collaboration and idea-sharing.
+            Holistically pontificate installed base portals after
+            maintainable products.
+        </p>
+        <p>
+            Phosfluorescently engage worldwide methodologies with
+            web-enabled technology. Interactively coordinate proactive
+            e-commerce via process-centric "outside the box" thinking.
+            Completely pursue scalable customer service through
+            sustainable potentialities.
+        </p>
+        <p>
+            Podcasting operational change management inside of workflows
+            to establish a framework. Taking seamless key performance
+            indicators offline to maximise the long tail. Keeping your
+            eye on the ball while performing a deep dive on the start-up
+            mentality to derive convergence on cross-platform integration.
+        </p>
+        <p>
+            Collaboratively administrate empowered markets via plug-and-play
+            networks. Dynamically procrastinate B2C users after installed
+            base benefits. Dramatically visualize customer directed
+            convergence without revolutionary ROI.
+        </p>
+    </Content>
+    <Footer>This is where the action is <NldsButton Type="ButtonType.Primary">OK!?</NldsButton></Footer>
+</NldsModal>
+<button @onclick="OpenModal3">Open Modal</button>
+<h3>modal: Width: large, height: extra large</h3>
+<NldsModal @ref="Modal4" CloseText="Close" Title="De titel" ScreenReaderText="Dit is de screenreaderTekst" Width="ModalSize.Large" Height="ModalSize.ExtraLarge">
+    <Content>
+        <p>
+            Leverage agile frameworks to provide a robust synopsis for
+            high level overviews. Iterative approaches to corporate strategy
+            foster collaborative thinking to further the overall value
+            proposition. Organically grow the holistic world view of
+            disruptive innovation via workplace diversity and empowerment.
+        </p>
+        <p>
+            Bring to the table win-win survival strategies to ensure
+            proactive domination. At the end of the day, going forward,
+            a new normal that has evolved from generation X is on the
+            runway heading towards a streamlined cloud solution. User
+            generated content in real-time will have multiple touchpoints
+            for offshoring.
+        </p>
+        <p>
+            Capitalise on low hanging fruit to identify a ballpark value
+            added activity to beta test.  Override the digital divide
+            with additional clickthroughs from DevOps. Nanotechnology
+            immersion along the information highway will close the loop
+            on focusing solely on the bottom line.
+        </p>
+        <p>
+            Podcasting operational change management inside of workflows
+            to establish a framework. Taking seamless key performance
+            indicators offline to maximise the long tail. Keeping your
+            eye on the ball while performing a deep dive on the start-up
+            mentality to derive convergence on cross-platform integration.
+        </p>
+        <p>
+            Collaboratively administrate empowered markets via plug-and-play
+            networks. Dynamically procrastinate B2C users after installed
+            base benefits. Dramatically visualize customer directed
+            convergence without revolutionary ROI.
+        </p>
+        <p>
+            Efficiently unleash cross-media information without
+            cross-media value. Quickly maximize timely deliverables for
+            real-time schemas. Dramatically maintain clicks-and-mortar
+            solutions without functional solutions.
+        </p>
+        <p>
+            Completely synergize resource taxing relationships via premier
+            niche markets. Professionally cultivate one-to-one customer
+            service with robust ideas. Dynamically innovate
+            resource-leveling customer service for state of the art
+            customer service.
+        </p>
+        <p>
+            Objectively innovate empowered manufactured products whereas
+            parallel platforms. Holisticly predominate extensible testing
+            procedures for reliable supply chains. Dramatically engage
+            top-line web services vis-a-vis cutting-edge deliverables.
+        </p>
+        <p>
+            Proactively envisioned multimedia based expertise and cross-media
+            growth strategies. Seamlessly visualize quality intellectual
+            capital without superior collaboration and idea-sharing.
+            Holistically pontificate installed base portals after
+            maintainable products.
+        </p>
+        <p>
+            Phosfluorescently engage worldwide methodologies with
+            web-enabled technology. Interactively coordinate proactive
+            e-commerce via process-centric "outside the box" thinking.
+            Completely pursue scalable customer service through
+            sustainable potentialities.
+        </p>
+        <p>
+            Podcasting operational change management inside of workflows
+            to establish a framework. Taking seamless key performance
+            indicators offline to maximise the long tail. Keeping your
+            eye on the ball while performing a deep dive on the start-up
+            mentality to derive convergence on cross-platform integration.
+        </p>
+        <p>
+            Collaboratively administrate empowered markets via plug-and-play
+            networks. Dynamically procrastinate B2C users after installed
+            base benefits. Dramatically visualize customer directed
+            convergence without revolutionary ROI.
+        </p>
+    </Content>
+    <Footer>This is where the action is <NldsButton Type="ButtonType.Primary">OK!?</NldsButton></Footer>
+</NldsModal>
+<button @onclick="OpenModal4">Open Modal</button>
+<h3>modal: Width: small, height: large</h3>
+<NldsModal @ref="Modal5" CloseText="Close" Title="De titel" ScreenReaderText="Dit is de screenreaderTekst" Width="ModalSize.Small" Height="ModalSize.Large">
+    <Content>
+        <p>
+            Leverage agile frameworks to provide a robust synopsis for
+            high level overviews. Iterative approaches to corporate strategy
+            foster collaborative thinking to further the overall value
+            proposition. Organically grow the holistic world view of
+            disruptive innovation via workplace diversity and empowerment.
+        </p>
+        <p>
+            Bring to the table win-win survival strategies to ensure
+            proactive domination. At the end of the day, going forward,
+            a new normal that has evolved from generation X is on the
+            runway heading towards a streamlined cloud solution. User
+            generated content in real-time will have multiple touchpoints
+            for offshoring.
+        </p>
+        <p>
+            Capitalise on low hanging fruit to identify a ballpark value
+            added activity to beta test.  Override the digital divide
+            with additional clickthroughs from DevOps. Nanotechnology
+            immersion along the information highway will close the loop
+            on focusing solely on the bottom line.
+        </p>
+        <p>
+            Podcasting operational change management inside of workflows
+            to establish a framework. Taking seamless key performance
+            indicators offline to maximise the long tail. Keeping your
+            eye on the ball while performing a deep dive on the start-up
+            mentality to derive convergence on cross-platform integration.
+        </p>
+        <p>
+            Collaboratively administrate empowered markets via plug-and-play
+            networks. Dynamically procrastinate B2C users after installed
+            base benefits. Dramatically visualize customer directed
+            convergence without revolutionary ROI.
+        </p>
+        <p>
+            Efficiently unleash cross-media information without
+            cross-media value. Quickly maximize timely deliverables for
+            real-time schemas. Dramatically maintain clicks-and-mortar
+            solutions without functional solutions.
+        </p>
+        <p>
+            Completely synergize resource taxing relationships via premier
+            niche markets. Professionally cultivate one-to-one customer
+            service with robust ideas. Dynamically innovate
+            resource-leveling customer service for state of the art
+            customer service.
+        </p>
+        <p>
+            Objectively innovate empowered manufactured products whereas
+            parallel platforms. Holisticly predominate extensible testing
+            procedures for reliable supply chains. Dramatically engage
+            top-line web services vis-a-vis cutting-edge deliverables.
+        </p>
+        <p>
+            Proactively envisioned multimedia based expertise and cross-media
+            growth strategies. Seamlessly visualize quality intellectual
+            capital without superior collaboration and idea-sharing.
+            Holistically pontificate installed base portals after
+            maintainable products.
+        </p>
+        <p>
+            Phosfluorescently engage worldwide methodologies with
+            web-enabled technology. Interactively coordinate proactive
+            e-commerce via process-centric "outside the box" thinking.
+            Completely pursue scalable customer service through
+            sustainable potentialities.
+        </p>
+        <p>
+            Podcasting operational change management inside of workflows
+            to establish a framework. Taking seamless key performance
+            indicators offline to maximise the long tail. Keeping your
+            eye on the ball while performing a deep dive on the start-up
+            mentality to derive convergence on cross-platform integration.
+        </p>
+        <p>
+            Collaboratively administrate empowered markets via plug-and-play
+            networks. Dynamically procrastinate B2C users after installed
+            base benefits. Dramatically visualize customer directed
+            convergence without revolutionary ROI.
+        </p>
+    </Content>
+    <Footer>This is where the action is <NldsButton Type="ButtonType.Primary">OK!?</NldsButton></Footer>
+</NldsModal>
+<button @onclick="OpenModal5">Open Modal</button>
+<NldsFooter Color="Color.Donkergroen">
+    <Title><u>Samen</u> maken we onderwijs en ontwikkeling mogelijk</Title>
+    <FooterColumns>
+        <NldsFooterColumn HasOffset="true">
+            <Title>
+                <span lang="en-US">Language</span>
+            </Title>
+            <List>
+                <NldsList Type="ListType.Links">
+                    <NldsListItem><a href="#" lang="en-US">English site</a></NldsListItem>
+                    <NldsListItem><a href="#" lang="de">Deutsche Seite</a></NldsListItem>
+                </NldsList>
+            </List>
+        </NldsFooterColumn>
+        <NldsFooterColumn>
+            <Title>
+                Service
+            </Title>
+            <List>
+                <NldsList Type="ListType.Links">
+                    <NldsListItem><a href="#">Contact</a></NldsListItem>
+                    <NldsListItem><a href="#">Privacy</a></NldsListItem>
+                    <NldsListItem><a href="#">Proclaimer</a></NldsListItem>
+                    <NldsListItem><a href="#">Toegankelijkheid</a></NldsListItem>
+                    <NldsListItem><a href="#">Inloggen <NldsIcon Icon="Icon.Secure" /></a></NldsListItem>
+                </NldsList>
+            </List>
+        </NldsFooterColumn>
+    </FooterColumns>
+</NldsFooter>
+<h2>Timeline</h2>
+<NldsTimeline HeadingNumber="3">
+    <NldsTimelineItem HeaderIsTime="true">
+        <Header>1 mei t/m 30 augustus</Header>
+        <Content>
+            <p>
+                <a href="/zakelijk/primair-onderwijs/bekostiging-en-subsidies/tegemoetkoming-opleidingsscholen/tegemoetkoming-aspirant-opleidingsscholen.jsp">
+                    Indienen
+                    aanvraag aspirant-opleidingsscholen
+                </a>
+            </p>
+        </Content>
+    </NldsTimelineItem>
+    <NldsTimelineItem HeaderIsTime="true">
+        <Header>1 juni t/m 30 september</Header>
+        <Content>
+            <p>
+                <a href="/zakelijk/primair-onderwijs/bekostiging-en-subsidies/tegemoetkoming-opleidingsscholen/opgave-aantal-studenten-opleidingsscholen.jsp">
+                    Indienen
+                    Opgave aantal studenten
+                    opleidingsscholen
+                </a>
+            </p>
+        </Content>
+    </NldsTimelineItem>
+    <NldsTimelineItem HeaderIsTime="true">
+        <Header>15 juni<NldsLabel Color="Color.Donkergeel">Deadline</NldsLabel></Header>
+        <Content>
+            <p>
+                <a href="/zakelijk/primair-onderwijs/personeel/levering-personeelsgegevens.jsp">
+                    Levering
+                    personeelsgegevens kwartaal 1 po
+                </a>
+            </p>
+        </Content>
+    </NldsTimelineItem>
+    <NldsTimelineItem HeaderIsTime="true">
+        <Header>22 juni<NldsLabel Color="Color.Donkergeel">Deadline</NldsLabel></Header>
+        <Content>
+            <p>
+                <a href="/zakelijk/betaaldatums/betaaldatums.jsp">
+                    Betaaldatum
+                    bekostiging
+                </a>
+            </p>
+        </Content>
+    </NldsTimelineItem>
+    <NldsTimelineItem HeaderIsTime="true" IsDisabled="true">
+        <Header>28 juni</Header>
+        <Content>
+            <p>Dit item is uitgeschakeld door gebruik van <code>list__item--disabled</code></p>
+        </Content>
+    </NldsTimelineItem>
+</NldsTimeline>
+<h3>without start or end with colored line</h3>
+<NldsTimeline IndicateStart="false" IndicateEnd="false" HeadingNumber="4" Color="Color.DonkerBruin">
+    <NldsTimelineItem HeaderIsTime="true">
+        <Header>1 mei t/m 30 augustus</Header>
+        <Content>
+            <p>
+                <a href="/zakelijk/primair-onderwijs/bekostiging-en-subsidies/tegemoetkoming-opleidingsscholen/tegemoetkoming-aspirant-opleidingsscholen.jsp">
+                    Indienen
+                    aanvraag aspirant-opleidingsscholen
+                </a>
+            </p>
+        </Content>
+    </NldsTimelineItem>
+    <NldsTimelineItem HeaderIsTime="true">
+        <Header>1 juni t/m 30 september</Header>
+        <Content>
+            <p>
+                <a href="/zakelijk/primair-onderwijs/bekostiging-en-subsidies/tegemoetkoming-opleidingsscholen/opgave-aantal-studenten-opleidingsscholen.jsp">
+                    Indienen
+                    Opgave aantal studenten
+                    opleidingsscholen
+                </a>
+            </p>
+        </Content>
+    </NldsTimelineItem>
+    <NldsTimelineItem HeaderIsTime="true">
+        <Header>15 juni<NldsLabel Color="Color.Donkergeel">Deadline</NldsLabel></Header>
+        <Content>
+            <p>
+                <a href="/zakelijk/primair-onderwijs/personeel/levering-personeelsgegevens.jsp">
+                    Levering
+                    personeelsgegevens kwartaal 1 po
+                </a>
+            </p>
+        </Content>
+    </NldsTimelineItem>
+    <NldsTimelineItem HeaderIsTime="true">
+        <Header>22 juni<NldsLabel Color="Color.Donkergeel">Deadline</NldsLabel></Header>
+        <Content>
+            <p>
+                <a href="/zakelijk/betaaldatums/betaaldatums.jsp">
+                    Betaaldatum
+                    bekostiging
+                </a>
+            </p>
+        </Content>
+    </NldsTimelineItem>
+    <NldsTimelineItem HeaderIsTime="true" IsDisabled="true">
+        <Header>28 juni</Header>
+        <Content>
+            <p>Dit item is uitgeschakeld door gebruik van <code>list__item--disabled</code></p>
+        </Content>
+    </NldsTimelineItem>
+</NldsTimeline>
+<h3>Grote tijdlijn</h3>
+<NldsTimeline IndicateStart="false" IsLarge="true">
+    <NldsTimelineItem HeaderIsTime="true" Date="@(new DateTime(2017, 8, 3))">
+        <Header>3 augustus 2017</Header>
+        <Content>
+            <strong>Terugmeldingen 2e voorlopige foto  2015 mbo vavo beschikbaar</strong>
+            <p>De terugmelding bekostigingsgrondslagen en de individuele terugmelding mbo en vavo van de tweede voorlopige foto van 1 oktober 2015 zij geplaatst.</p>
+            <p>
+                <a href="/particulier/nieuwsoverzicht/terugmeldingen-2e-voorlopige-foto-2015-mbo-vavo-beschikbaar/">Lees meer</a>
+            </p>
+        </Content>
+    </NldsTimelineItem>
+    <NldsTimelineItem HeaderIsTime="true">
+        <Header>1 juni t/m 30 september</Header>
+        <Content>
+            <p>
+                <a href="/zakelijk/primair-onderwijs/bekostiging-en-subsidies/tegemoetkoming-opleidingsscholen/opgave-aantal-studenten-opleidingsscholen.jsp">
+                    Indienen
+                    Opgave aantal studenten
+                    opleidingsscholen
+                </a>
+            </p>
+        </Content>
+    </NldsTimelineItem>
+    <NldsTimelineItem HeaderIsTime="true">
+        <Header>15 juni<NldsLabel Color="Color.Donkergeel">Deadline</NldsLabel></Header>
+        <Content>
+            <p>
+                <a href="/zakelijk/primair-onderwijs/personeel/levering-personeelsgegevens.jsp">
+                    Levering
+                    personeelsgegevens kwartaal 1 po
+                </a>
+            </p>
+        </Content>
+    </NldsTimelineItem>
+    <NldsTimelineItem HeaderIsTime="true">
+        <Header>22 juni<NldsLabel Color="Color.Donkergeel">Deadline</NldsLabel></Header>
+        <Content>
+            <p>
+                <a href="/zakelijk/betaaldatums/betaaldatums.jsp">
+                    Betaaldatum
+                    bekostiging
+                </a>
+            </p>
+        </Content>
+    </NldsTimelineItem>
+    <NldsTimelineItem HeaderIsTime="true" IsDisabled="true">
+        <Header>28 juni</Header>
+        <Content>
+            <p>Dit item is uitgeschakeld door gebruik van <code>list__item--disabled</code></p>
+        </Content>
+    </NldsTimelineItem>
+</NldsTimeline>
+<h3>Compact</h3>
+<NldsTimeline IsCompact=" true">
+    <NldsTimelineItem><Header>Gegevens verzamelen</Header></NldsTimelineItem>
+    <NldsTimelineItem IsActive="true"><Header>Ondertekening</Header></NldsTimelineItem>
+    <NldsTimelineItem IsDisabled="true"><Header>In behandeling</Header></NldsTimelineItem>
+    <NldsTimelineItem IsDisabled="true"><Header>Uitsluitsel</Header></NldsTimelineItem>
+</NldsTimeline>
+<h2>Navigatie</h2>
+<h3>Navigatiebalk met breadcrumbs menu en knoppen</h3>
+<div>
+    <NldsNavigation Color="Color.RobijnRood">
+        <NldsBreadcrumbs>
+            <NldsNavigationItem Uri="#" Title="Home">
+                <Content>
+                    <NldsIcon Icon="Icon.Home"></NldsIcon>
+                    <span lang="en-US">Home</span>
+                </Content>
+            </NldsNavigationItem>
+            <NldsNavigationItem Uri="#" Title="Page">
+                <Content>
+                    <span>Niv 1</span>
+                </Content>
+            </NldsNavigationItem>
+        </NldsBreadcrumbs>
+        <NldsNavigationCollapseBlock GroupName="nav-example1">
+            <NldsNavigationCollapseBlockItem Target="collapse-menu-example">
+                <NldsIcon Icon="Icon.Hamburger"></NldsIcon>
+                <span>Menu</span>
+            </NldsNavigationCollapseBlockItem>
+        </NldsNavigationCollapseBlock>
+    </NldsNavigation>
+    <NldsNavigationCollapse Identifier="collapse-menu-example">
+        <NldsNavigationItem Uri="#"><Content>Core</Content></NldsNavigationItem>
+        <NldsNavigationItem Uri="#"><Content>Componenten</Content></NldsNavigationItem>
+        <NldsNavigationItem Uri="#"><Content>Changelog</Content></NldsNavigationItem>
+    </NldsNavigationCollapse>
+</div>
+<br />
+<br />
+<h3>Simpele navigatiebalk</h3>
+<div>
+    <NldsNavigation Color="Color.Donkergeel">
+        <NldsNavigationList>
+            <NldsNavigationItem Uri="#">
+                <Content>
+                    Core
+                </Content>
+            </NldsNavigationItem>
+            <NldsNavigationItem Uri="#" IsActive="true">
+                <Content>
+                    Componenten
+                </Content>
+            </NldsNavigationItem>
+            <NldsNavigationItem Uri="#">
+                <Content>
+                    Changelog
+                </Content>
+            </NldsNavigationItem>
+        </NldsNavigationList>
+    </NldsNavigation>
+</div>
+<br />
+<br />
+<h3>Simpele navigatiebalk met autoresize</h3>
+<div>
+    <NldsNavigation Color="Color.Donkergeel" AutoResize="true">
+        <NldsNavigationList>
+            <NldsNavigationItem Uri="#">
+                <Content>
+                    Core
+                </Content>
+            </NldsNavigationItem>
+            <NldsNavigationItem Uri="#" IsActive="true">
+                <Content>
+                    Componenten
+                </Content>
+            </NldsNavigationItem>
+            <NldsNavigationItem Uri="#">
+                <Content>
+                    Changelog
+                </Content>
+            </NldsNavigationItem>
+        </NldsNavigationList>
+    </NldsNavigation>
+</div>
+<br />
+<br />
+<h3>Navigatiebalk met subnavigatie</h3>
+<div>
+    <NldsNavigation Color="Color.HemelBlauw">
+        <NldsNavigationList HasSubNavigationPopout="true">
+            <NldsSubNavigationPopoutItem Uri="#">
+                <Content>Particulier</Content>
+                <PopoutList>
+                    <NldsNavigationItem Uri="#">
+                        <Content>
+                            Mbo'er
+                        </Content>
+                    </NldsNavigationItem>
+                    <NldsNavigationItem Uri="#">
+                        <Content>
+                            Student hbo of universiteit
+                        </Content>
+                    </NldsNavigationItem>
+                    <NldsNavigationItem Uri="#">
+                        <Content>
+                            Scholier vmbo, havo of vwo
+                        </Content>
+                    </NldsNavigationItem>
+                    <NldsNavigationItem Uri="#">
+                        <Content>
+                            Ouder
+                        </Content>
+                    </NldsNavigationItem>
+                    <NldsNavigationItem Uri="#">
+                        <Content>
+                            Leraar
+                        </Content>
+                    </NldsNavigationItem>
+                    <NldsNavigationItem Uri="#">
+                        <Content>
+                            Terugbetaler
+                        </Content>
+                    </NldsNavigationItem>
+                    <NldsNavigationItem Uri="#">
+                        <Content>
+                            Staatsexamenkandidaat
+                        </Content>
+                    </NldsNavigationItem>
+                    <NldsNavigationItem Uri="#">
+                        <Content>
+                            Kinderopvang
+                        </Content>
+                    </NldsNavigationItem>
+                    <NldsNavigationItem Uri="#">
+                        <Content>
+                            International visitor
+                        </Content>
+                    </NldsNavigationItem>
+                </PopoutList>
+            </NldsSubNavigationPopoutItem>
+            <NldsNavigationItem Uri="#">
+                <Content>
+                    Zakelijk
+                </Content>
+            </NldsNavigationItem>
+            <NldsNavigationItem Uri="#">
+                <Content>
+                    Onderwijsdata
+                </Content>
+            </NldsNavigationItem>
+            <NldsNavigationItem Uri="#" IsExternal="true">
+                <Content>
+                    Inburgeren
+                </Content>
+            </NldsNavigationItem>
+        </NldsNavigationList>
+    </NldsNavigation>
+</div>
+<br />
+<br />
+<h3>Navigatiebalk met subnavigatie</h3>
+<div>
+    <NldsNavigation Color="Color.HemelBlauw">
+        <NldsNavigationList HasSubMenu="true">
+            <NldsNavigationItem Uri="#"><Content>Core</Content></NldsNavigationItem>
+            <NldsNavigationItem Uri="#">
+                <Content>Componenten</Content>
+                <SubMenu>
+                    <NldsNavigationList IsSubMenu="true">
+                        <NldsNavigationItem Uri="/test">
+                            <Content>Button</Content>
+                        </NldsNavigationItem>
+                        <NldsNavigationItem Uri="/test2">
+                            <Content>Checkbox</Content>
+                        </NldsNavigationItem>
+                    </NldsNavigationList>
+                </SubMenu>
+            </NldsNavigationItem>
+            <NldsNavigationItem Uri="#">
+                <Content>Changelog</Content>
+            </NldsNavigationItem>
+        </NldsNavigationList>
+    </NldsNavigation>
+</div>
+<br />
+<br />
+<h3>Zijnavigatie</h3>
+<div>
+    <NldsNavigation IsSideNavigation="true">
+        <NldsNavigationList>
+            <NldsNavigationItem Uri="#">
+                <Content>Core</Content>
+            </NldsNavigationItem>
+            <NldsNavigationItem Uri="#" IsActive="true">
+                <Content>
+                    Componenten
+                </Content>
+                <SubMenu>
+                    <NldsNavigationList>
+                        <NldsNavigationItem Uri="#">
+                            <Content>Button</Content>
+                        </NldsNavigationItem>
+                        <NldsNavigationItem Uri="#" IsActive="true">
+                            <Content>Checkbox</Content>
+                        </NldsNavigationItem>
+                        <NldsNavigationItem Uri="#">
+                            <Content>Radio</Content>
+                        </NldsNavigationItem>
+                        <NldsNavigationItem Uri="#">
+                            <Content>Tabs</Content>
+                        </NldsNavigationItem>
+                    </NldsNavigationList>
+                </SubMenu>
+            </NldsNavigationItem>
+            <NldsNavigationItem Uri="#">
+                <Content>Templates</Content>
+            </NldsNavigationItem>
+            <NldsNavigationItem Uri="#">
+                <Content>Changelog</Content>
+            </NldsNavigationItem>
+        </NldsNavigationList>
+    </NldsNavigation>
+</div>
+<br />
+<br />
+<h3>Zijnavigatie</h3>
+@code {
+    static Action<Guid> SelectItem = (guid) => SetItemSelected(guid);
+
+    static private void SetItemSelected(Guid key)
+    {
+        var inSideNavigationItems = InSideNavigationItems.ToList();
+        inSideNavigationItems.ForEach(i => i.IsSelected = i.Key == key);
+        InSideNavigationItems = inSideNavigationItems;
+    }
+
+    static IEnumerable<InSiteNavigationItem> InSideNavigationItems = new List<InSiteNavigationItem> {
+        new InSiteNavigationItem
+        {
+            Content = "Wat moet je doen",
+            Uri = "#",
+            OnClick = SelectItem
+        },
+        new InSiteNavigationItem
+        {
+            Content = "Voorwaarden",
+            Uri = "#",
+            IsSelected = true,
+            OnClick = SelectItem
+        },
+        new InSiteNavigationItem
+        {
+            Content = "Hoe het werkt",
+            Uri = "#",
+            OnClick = SelectItem
+        },
+        new InSiteNavigationItem
+        {
+            Content = "Hoe zit het met studiefinanciering",
+            Uri = "#",
+            OnClick = SelectItem
+        },
+        new InSiteNavigationItem
+        {
+            Content = "Ouders",
+            Uri = "#",
+            OnClick = SelectItem
+        }
+};
+
+}
+<div>
+    <NldsInSiteNavigation Items="@InSideNavigationItems" />
+</div>
+@*Bottombar Spacing*@
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />

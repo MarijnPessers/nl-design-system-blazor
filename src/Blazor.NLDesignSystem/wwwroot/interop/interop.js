@@ -1,5 +1,5 @@
 ﻿//////
-//Event listeners
+// Event listeners
 //////
 
 window.NlDesignSystemBlazor = window.NlDesignSystemBlazor || {};
@@ -9,13 +9,14 @@ function setEventListener(eventName, handler, JSObjectRef) {
   let listener = function (e) {
     JSObjectRef.invokeMethodAsync("EventCallback", eventName, JSON.stringify(e));
   };
-  switch (eventName) {
-    case "combobox-select": handler.addEventListener(eventName, listener);
-    break;
-  }
+  handler.addEventListener(eventName, listener);
 }
 
-function getElementById (id, unobstrusive = false) {
+//////
+// Adding and getting Elements
+//////
+
+function getElementById(id, unobstrusive = false) {
   let elementHolder = window.NlDesignSystemBlazor.elements.find(e => e.id === id);
   if (!elementHolder) {
     if (unobstrusive) return null;
@@ -28,79 +29,190 @@ function getElementById (id, unobstrusive = false) {
   return elementHolder.element;
 }
 
-function addElement(id, element, registrationId) {
-    var oldElement = getElementById(id, true);
-    if (oldElement != null) {
-       window.NlDesignSystemBlazor.elements.splice(window.NlDesignSystemBlazor.elements.findIndex(item => item.id === id), 1);
-       oldElement.dispose();
-    }
-    window.NlDesignSystemBlazor.elements.push({ id: registrationId, element: element });
+function removeElement(id) {
+  var oldElement = getElementById(id, true);
+  if (oldElement != null) {
+    window.NlDesignSystemBlazor.elements.splice(window.NlDesignSystemBlazor.elements.findIndex(item => item.id === id), 1);
+  }
+}
+
+function addElement(id, element) {
+  removeElement(id);
+  window.NlDesignSystemBlazor.elements.push({ id: id, element: element });
 }
 
 //////
-//Collapse
+// Chart
 //////
 
-function collapse(el) {
-  System.import('_content/Blazor.NLDesignSystem/dist/components/collapse/collapse.js').then(function (module) {
-    new module.Collapse(el);
+function donutChart(el, value) {
+  System.import('_content/Blazorized.NLDesignSystem/dist/components/donut-chart/donut-chart.js').then(function (module) {
+    donutChart = new module.DonutChart(el);
+    donutChart.value = value;
+    donutChart.draw();
+  });
+}
+
+// Methods done in Blazor, no javascript needed
+
+//////
+// Checkbox
+//////
+
+function checkbox(el) {
+  System.import('_content/Blazorized.NLDesignSystem/dist/components/form/checkbox.js').then(function (module) {
+    new module.CheckboxGroup(el);
   });
 }
 
 //////
-//Combobox
+// Collapse
 //////
 
-var comboboxPrefix = "combobox_";
+var collapsePrefix = "_collapse_";
 
-function getComboboxById(id) {
-  var retrievalId = comboboxPrefix + id;
-  return getElementById(retrievalId);
+function collapse(el, id) {
+  System.import('_content/Blazorized.NLDesignSystem/dist/components/collapse/collapse.js').then(function (module) {
+    var collapse = new module.Collapse(el);
+    if (id != null) { //on purpose not a type specific comparison
+      addElement(collapsePrefix + id, collapse);
+    }
+  });
 }
 
-async function combobox(el, id, dataArray) {
-  await System.import('_content/Blazor.NLDesignSystem/dist/components/form/combobox.js').then(function (module) {
+async function closeCollapse(id) {
+  var collapse = getElementById(collapsePrefix + id);
+  collapse.close();
+}
+
+async function destroyCollapse(id) {
+  var collapse = getElementById(collapsePrefix + id);
+  collapse.destroy();
+  removeElement(collapsePrefix + id);
+}
+
+async function openCollapse(id) {
+  var collapse = getElementById(collapsePrefix + id);
+  collapse.open();
+}
+
+async function toggleCollapse(id) {
+  var collapse = getElementById(collapsePrefix + id);
+  collapse.toggle();
+}
+
+//////
+// Combobox
+//////
+
+async function combobox(el, dataArray) {
+  await System.import('_content/Blazorized.NLDesignSystem/dist/components/form/combobox.js').then(function (module) {
     var combobox = new module.Combobox(el);
     combobox.allowUnknown = false;
     combobox.data = dataArray;
-    var registrationId = comboboxPrefix + id;
-    addElement(id, combobox, registrationId);
   });
 }
 
 //////
-//Navigation
+// Modal
+//////
+
+var modalPrefix = "_modal_";
+
+async function modal(el, id) {
+  await System.import('_content/Blazorized.NLDesignSystem/dist/components/modal/modal.js').then(function (module) {
+    var modal = new module.Modal(el);
+    addElement(modalPrefix + id, modal);
+  });
+}
+
+async function openModal(id) {
+  var modal = getElementById(modalPrefix + id);
+  modal.open();
+}
+
+
+//////
+// Navigation
 //////
 
 function navigationSubmenu(el) {
-  System.import('_content/Blazor.NLDesignSystem/dist/components/navigation/navigation.js').then(function (module) {
+  System.import('_content/Blazorized.NLDesignSystem/dist/components/navigation/navigation.js').then(function (module) {
     new module.SubMenuNavigation(el);
   });
 }
 
-function navitationAutoResize() {
-  // Load nav component
-  System.import('_content/Blazor.NLDesignSystem/dist/components/navigation/navigation.js').then(function (module) {
-    var navs = document.querySelectorAll('.top-nav-autoresize');
-    // Initialize all navs
-    for (var i = 0; i < navs.length; i++) {
-      //new module.AutoResizeNavigation(navs.item(i));
-    }
+function navitationAutoResize(el) {
+  System.import('_content/Blazorized.NLDesignSystem/dist/components/navigation/navigation.js').then(function (module) {
+      new module.AutoResizeNavigation(el);
   });
 }
 
 //////
-//Notification
+// Notification
 //////
 
-//Done in Blazor, no javascript needed
+// Done in Blazor, no javascript needed
 
 //////
-//Tooltip
+// Table
+//////
+
+function table(el) {
+  System.import('_content/Blazorized.NLDesignSystem/dist/components/table/TableResponsive.js').then(function (module) {
+    new module.TableResponsive(el);
+  });
+}
+
+//////
+// Tabs
+//////
+
+var tabsPrefix = "_tabs_";
+
+function tabs(el, id) {
+  System.import('_content/Blazorized.NLDesignSystem/dist/components/tabs/tabs.js').then(function (module) {
+    tabs = new module.Tabs(el);
+    if (id != null) { //on purpose not a type specific comparison
+      addElement(tabsPrefix + id, tabs);
+    }
+  });
+}
+
+async function destroyTabs(id) {
+  var tabs = getElementById(tabsPrefix + id);
+  tabs.destroy();
+  removeElement(tabsPrefix + id);
+}
+
+async function disableTab(id, idx) {
+  var tabs = getElementById(tabsPrefix + id);
+  tabs.disableTab(idx);
+}
+
+async function enableTab(id, idx) {
+  var tabs = getElementById(tabsPrefix + id);
+  tabs.enableTab(idx);
+}
+
+async function getActiveTabIndex (id) {
+  var tabs = getElementById(tabsPrefix + id);
+  var a = tabs.activeTabIndex;
+  console.log(a);
+  return tabs.activeTabIndex;
+}
+
+async function openTab(id, idx) {
+  var tabs = getElementById(tabsPrefix + id);
+  tabs.openTab(idx);
+}
+
+//////
+// Tooltip
 //////
 
 function tooltip(el) {
-  System.import('_content/Blazor.NLDesignSystem/dist/components/tooltip/tooltip.js').then(function (module) {
+  System.import('_content/Blazorized.NLDesignSystem/dist/components/tooltip/tooltip.js').then(function (module) {
     new module.Tooltip(el);
   });
 }

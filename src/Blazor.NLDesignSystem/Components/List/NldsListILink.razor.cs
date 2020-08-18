@@ -3,24 +3,24 @@ using System.Collections.Generic;
 
 namespace Blazor.NLDesignSystem.Components
 {
-    public partial class NldsNavigationSubmenu
+    public partial class NldsListILink
     {
+        [CascadingParameter(Name = "ParentListType")]
+        public ListType? ParentListType { get; set; }
+
         [Parameter]
         public RenderFragment ChildContent { get; set; }
+
         [Parameter]
-        public string DisplayName { get; set; }
-        [Parameter]
-        public Icon Icon { get; set; }
-        [Parameter]
-        public string Title { get; set; }
+        public string Uri { get; set; }
 
         private IDictionary<string, object> GetAttributes()
         {
             var attributes = new Dictionary<string, object>();
 
-            if (!string.IsNullOrWhiteSpace(Title))
+            if (ParentListType != null) //there is a parent list item 
             {
-                attributes["Title"] = Title;
+                attributes["class"] = "list__link";
             }
 
             return attributes;
